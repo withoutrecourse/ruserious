@@ -1,37 +1,38 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
 <style>
   #nrc-banner {
-  background: #c0392b !important;
+  background: #111111 !important;
   width: 100% !important;
   display: block !important;
   padding: 0 !important;
+  border-bottom: 1px solid #2a2a2a !important;
 }
 #nrc-banner-inner {
   max-width: 1100px !important;
   margin: 0 auto !important;
-  padding: 1rem 2.5rem !important;
+  padding: 2.5rem 2.5rem !important;
   display: flex !important;
-  align-items: baseline !important;
-  gap: 1.25rem !important;
-  flex-wrap: wrap !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 1rem !important;
+  text-align: center !important;
 }
 #nrc-banner-q {
   font-family: 'Bebas Neue', Impact, sans-serif !important;
-  font-size: 1.6rem !important;
-  color: #ffffff !important;
-  letter-spacing: 0.06em !important;
-  white-space: nowrap !important;
-  flex-shrink: 0 !important;
+  font-size: clamp(2.5rem, 6vw, 4rem) !important;
+  color: #d0d0d0 !important;
+  letter-spacing: 0.08em !important;
   line-height: 1 !important;
 }
 #nrc-banner-text {
   font-family: 'IBM Plex Mono', monospace !important;
-  font-size: 11px !important;
-  color: rgba(255,255,255,0.85) !important;
-  letter-spacing: 0.04em !important;
-  line-height: 1.6 !important;
+  font-size: clamp(12px, 1.5vw, 15px) !important;
+  color: #888 !important;
+  letter-spacing: 0.05em !important;
+  line-height: 1.8 !important;
+  max-width: 680px !important;
 }
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,400;0,600;1,400&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,400;0,600;1,400&display=swap');
 
 /* Force reset — beats WordPress theme */
 #nrc-page, #nrc-page * { box-sizing: border-box !important; margin: 0 !important; padding: 0 !important; }
