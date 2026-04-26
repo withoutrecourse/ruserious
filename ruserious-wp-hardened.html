@@ -1,0 +1,781 @@
+<!-- 
+  RUSERIOUS.WTF — WordPress Hardened Version
+  Paste into a single Custom HTML block on your page.
+  
+  STEP 1: Generate your QR code image at https://qr-code-generator.com
+          Type = Text, paste the notice text, download PNG
+  STEP 2: Upload to WordPress Media Library, copy the URL
+  STEP 3: Replace YOUR-QR-IMAGE-URL-HERE below with that URL
+  STEP 4: Paste this entire file into a Custom HTML block
+-->
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,400;0,600;1,400&display=swap');
+
+/* Force reset — beats WordPress theme */
+#nrc-page, #nrc-page * { box-sizing: border-box !important; margin: 0 !important; padding: 0 !important; }
+#nrc-page a, #nrc-page a:visited { text-decoration: none !important; }
+#nrc-page ul { list-style: none !important; }
+
+/* ── ROOT ── */
+#nrc-page {
+  background: #f6f5f1 !important;
+  color: #181818 !important;
+  font-family: 'Lora', Georgia, serif !important;
+  line-height: 1.7 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  display: block !important;
+}
+
+/* ── HERO ── */
+#nrc-hero {
+  background: #181818 !important;
+  color: white !important;
+  width: 100% !important;
+  display: block !important;
+  padding: 0 !important;
+}
+#nrc-hero-accent {
+  height: 7px !important;
+  background: #c0392b !important;
+  width: 100% !important;
+  display: block !important;
+}
+#nrc-hero-inner {
+  max-width: 860px !important;
+  margin: 0 auto !important;
+  padding: 3rem 1.5rem 2.5rem !important;
+  display: flex !important;
+  gap: 2.5rem !important;
+  align-items: center !important;
+  flex-wrap: wrap !important;
+}
+#nrc-hero-text { flex: 1 !important; min-width: 240px !important; }
+
+#nrc-kicker {
+  font-family: 'IBM Plex Mono', monospace !important;
+  font-size: 10px !important;
+  letter-spacing: 0.2em !important;
+  text-transform: uppercase !important;
+  color: #c0392b !important;
+  margin-bottom: 0.75rem !important;
+  display: block !important;
+}
+
+#nrc-hero h1 {
+  font-family: 'Bebas Neue', Impact, sans-serif !important;
+  font-size: clamp(3rem, 9vw, 5.5rem) !important;
+  line-height: 0.95 !important;
+  color: #ffffff !important;
+  letter-spacing: 0.02em !important;
+  margin-bottom: 0.25rem !important;
+  border: none !important;
+  padding: 0 !important;
+}
+#nrc-hero h1 .red { color: #c0392b !important; display: block !important; }
+
+#nrc-hero-sub {
+  font-family: 'IBM Plex Mono', monospace !important;
+  font-size: 10px !important;
+  color: #888 !important;
+  letter-spacing: 0.05em !important;
+  margin-top: 1rem !important;
+  line-height: 1.8 !important;
+  display: block !important;
+}
+
+#nrc-qr-block {
+  flex-shrink: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 10px !important;
+}
+#nrc-qr-frame {
+  background: #f6f5f1 !important;
+  padding: 10px !important;
+  border: 2px solid #444 !important;
+  display: block !important;
+  position: relative !important;
+}
+#nrc-qr-frame img {
+  display: block !important;
+  width: 170px !important;
+  height: 170px !important;
+}
+#nrc-qr-caption {
+  font-family: 'IBM Plex Mono', monospace !important;
+  font-size: 8px !important;
+  color: #777 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.1em !important;
+  text-align: center !important;
+  display: block !important;
+  line-height: 1.6 !important;
+}
+
+#nrc-hero-foot {
+  border-top: 1px solid #2a2a2a !important;
+  padding: 0.9rem 1.5rem !important;
+  max-width: 860px !important;
+  margin: 0 auto !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  flex-wrap: wrap !important;
+  gap: 0.75rem !important;
+}
+#nrc-hero-foot .dom-primary {
+  font-family: 'IBM Plex Mono', monospace !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  color: #c0392b !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+}
+#nrc-hero-foot .dom-secondary {
+  font-family: 'IBM Plex Mono', monospace !important;
+  font-size: 10px !important;
+  color: #555 !important;
+  letter-spacing: 0.04em !important;
+}
+
+/* ── NAV ── */
+#nrc-nav {
+  background: #111111 !important;
+  border-bottom: 1px solid #222 !important;
+  padding: 0 1.5rem !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  gap: 0 !important;
+  width: 100% !important;
+}
+#nrc-nav a {
+  font-family: 'IBM Plex Mono', monospace !important;
+  font-size: 10px !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  color: #888 !important;
+  text-decoration: none !important;
+  padding: 11px 12px !important;
+  border-bottom: 2px solid transparent !important;
+  white-space: nowrap !important;
+  display: inline-block !important;
+}
+#nrc-nav a:hover { color: white !important; border-bottom-color: #c0392b !important; }
+
+/* ── MAIN ── */
+#nrc-main {
+  max-width: 860px !important;
+  margin: 0 auto !important;
+  padding: 3rem 1.5rem !important;
+  display: block !important;
+}
+
+/* ── SECTION ── */
+.nrc-sec { margin-bottom: 3.5rem !important; display: block !important; }
+
+.nrc-sec-label {
+  font-family: 'IBM Plex Mono', monospace !important;
+  font-size: 9px !important;
+  letter-spacing: 0.2em !important;
+  text-transform: uppercase !important;
+  color: #c0392b !important;
+  margin-bottom: 4px !important;
+  display: block !important;
+}
+
+.nrc-sec-title {
+  font-family: 'Bebas Neue', Impact, sans-serif !important;
+  font-size: clamp(1.7rem, 4vw, 2.5rem) !important;
+  line-height: 1.05 !important;
+  color: #181818 !important;
+  letter-spacing: 0.02em !important;
+  margin-bottom: 1.5rem !important;
+  border-bottom: 2.5px solid #181818 !important;
+  padding-bottom: 0.6rem !important;
+  display: block !important;
+}
+
+/* ── NOTICE BOX ── */
+.nrc-notice {
+  background: #ffffff !important;
+  border-left: 6px solid #c0392b !important;
+  border-top: 1px solid #ddd !important;
+  border-right: 1px solid #ddd !important;
+  border-bottom: 1px solid #ddd !important;
+  padding: 2rem 1.8rem 1.8rem !important;
+  margin-bottom: 1.5rem !important;
+  display: block !important;
+  position: relative !important;
+}
+.nrc-notice-inner {
+  font-family: 'Lora', Georgia, serif !important;
+  font-size: 0.98rem !important;
+  line-height: 1.9 !important;
+  color: #3a3a3a !important;
+  display: block !important;
+  margin-top: 0.25rem !important;
+}
+.nrc-notice-inner strong {
+  font-weight: 600 !important;
+  color: #181818 !important;
+  text-decoration: underline !important;
+  text-decoration-color: #c0392b !important;
+  text-underline-offset: 3px !important;
+}
+.nrc-notice-inner em { font-style: italic !important; color: #666 !important; }
+
+.nrc-tagline {
+  font-family: 'Bebas Neue', Impact, sans-serif !important;
+  font-size: clamp(1.3rem, 3.5vw, 1.9rem) !important;
+  color: #c0392b !important;
+  letter-spacing: 0.04em !important;
+  margin-top: 1.5rem !important;
+  line-height: 1.15 !important;
+  display: block !important;
+}
+
+/* ── LAW GRID ── */
+.nrc-law-grid {
+  border: 1px solid #ddd !important;
+  background: #ffffff !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0 !important;
+}
+.nrc-law-row {
+  display: flex !important;
+  gap: 0 !important;
+  border-bottom: 0.5px solid #ddd !important;
+}
+.nrc-law-row:last-child { border-bottom: none !important; }
+
+.nrc-law-badge {
+  font-family: 'IBM Plex Mono', monospace !important;
+  font-size: 9px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.05em !important;
+  text-transform: uppercase !important;
+  color: #c0392b !important;
+  background: #fafaf8 !important;
+  border-right: 1px solid #ddd !important;
+  padding: 1rem 0.6rem !important;
+  min-width: 66px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  flex-shrink: 0 !important;
+  line-height: 1.5 !important;
+}
+
+.nrc-law-body {
+  padding: 0.85rem 1.1rem !important;
+  flex: 1 !important;
+}
+.nrc-law-body p {
+  font-size: 0.87rem !important;
+  line-height: 1.75 !important;
+  color: #3a3a3a !important;
+  margin: 0 !important;
+}
+.nrc-law-body strong { color: #181818 !important; font-weight: 600 !important; }
+.nrc-law-body cite {
+  display: block !important;
+  font-size: 0.74rem !important;
+  color: #888 !important;
+  font-style: italic !important;
+  margin-top: 3px !important;
+}
+
+/* ── STATE TABS ── */
+.nrc-tabs {
+  display: flex !important;
+  gap: 5px !important;
+  flex-wrap: wrap !important;
+  margin-bottom: 1rem !important;
+}
+.nrc-tab {
+  font-family: 'IBM Plex Mono', monospace !important;
+  font-size: 10px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.05em !important;
+  padding: 5px 12px !important;
+  border: 1px solid #ddd !important;
+  background: #fff !important;
+  color: #181818 !important;
+  cursor: pointer !important;
+  text-transform: uppercase !important;
+  border-radius: 1px !important;
+  display: inline-block !important;
+}
+.nrc-tab:hover { border-color: #c0392b !important; color: #c0392b !important; }
+.nrc-tab.on { background: #181818 !important; color: white !important; border-color: #181818 !important; }
+
+.nrc-panel { display: none !important; }
+.nrc-panel.on { display: block !important; }
+
+.nrc-panel h4 {
+  font-family: 'IBM Plex Mono', monospace !important;
+  font-size: 10px !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  color: #888 !important;
+  padding-bottom: 8px !important;
+  border-bottom: 1px solid #ddd !important;
+  margin-bottom: 1rem !important;
+  display: block !important;
+  font-weight: 400 !important;
+}
+
+.nrc-statute {
+  background: #ffffff !important;
+  border: 1px solid #ddd !important;
+  border-left: 3px solid #c0392b !important;
+  padding: 0.9rem 1.1rem !important;
+  margin-bottom: 0.7rem !important;
+  display: block !important;
+}
+.nrc-statute .ref {
+  font-family: 'IBM Plex Mono', monospace !important;
+  font-size: 10px !important;
+  font-weight: 700 !important;
+  color: #c0392b !important;
+  margin-bottom: 5px !important;
+  letter-spacing: 0.03em !important;
+  display: block !important;
+}
+.nrc-statute p {
+  font-size: 0.86rem !important;
+  line-height: 1.75 !important;
+  color: #3a3a3a !important;
+  margin: 0 !important;
+}
+
+/* BIPA table */
+.nrc-dtable {
+  width: 100% !important;
+  border-collapse: collapse !important;
+  font-size: 0.86rem !important;
+  background: #fff !important;
+  border: 1px solid #ddd !important;
+  margin-top: 0.75rem !important;
+}
+.nrc-dtable td {
+  padding: 8px 12px !important;
+  border-bottom: 0.5px solid #ddd !important;
+}
+.nrc-dtable td:first-child { color: #888 !important; }
+.nrc-dtable td:last-child {
+  font-family: 'IBM Plex Mono', monospace !important;
+  font-weight: 700 !important;
+  color: #c0392b !important;
+  text-align: right !important;
+}
+.nrc-dtable tr:last-child td { border-bottom: none !important; }
+
+/* ── CONSEQUENCES ── */
+.nrc-cons {
+  background: #fdf0ef !important;
+  border: 1px solid #e8c4c0 !important;
+  padding: 1.4rem !important;
+  display: block !important;
+}
+.nrc-cons li {
+  font-size: 0.9rem !important;
+  padding: 5px 0 5px 1.4rem !important;
+  position: relative !important;
+  line-height: 1.65 !important;
+  border-bottom: 0.5px solid #e8c4c0 !important;
+  display: block !important;
+  list-style: none !important;
+}
+.nrc-cons li:last-child { border-bottom: none !important; }
+.nrc-cons li::before {
+  content: '→' !important;
+  position: absolute !important;
+  left: 0 !important;
+  color: #c0392b !important;
+  font-family: 'IBM Plex Mono', monospace !important;
+}
+
+/* ── USE CASES ── */
+.nrc-use {
+  display: flex !important;
+  gap: 1rem !important;
+  align-items: flex-start !important;
+  background: #ffffff !important;
+  border: 1px solid #ddd !important;
+  padding: 0.9rem 1.1rem !important;
+  margin-bottom: 0.6rem !important;
+}
+.nrc-use-icon {
+  font-family: 'IBM Plex Mono', monospace !important;
+  font-size: 8px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.05em !important;
+  background: #181818 !important;
+  color: #eeeeee !important;
+  padding: 3px 6px !important;
+  white-space: nowrap !important;
+  flex-shrink: 0 !important;
+  margin-top: 3px !important;
+  text-transform: uppercase !important;
+  display: block !important;
+}
+.nrc-use p {
+  font-size: 0.86rem !important;
+  line-height: 1.75 !important;
+  color: #3a3a3a !important;
+  margin: 0 !important;
+}
+.nrc-use p strong { color: #181818 !important; font-weight: 600 !important; }
+
+/* ── ACK ── */
+.nrc-ack {
+  font-family: 'IBM Plex Mono', monospace !important;
+  font-size: 0.77rem !important;
+  color: #666 !important;
+  border-top: 2px solid #181818 !important;
+  border-bottom: 1px solid #ddd !important;
+  padding: 1.2rem 0 !important;
+  margin: 2rem 0 !important;
+  line-height: 1.95 !important;
+  display: block !important;
+}
+
+/* ── CTA ── */
+#nrc-cta {
+  background: #181818 !important;
+  color: white !important;
+  padding: 2.5rem 2rem !important;
+  text-align: center !important;
+  margin-top: 2rem !important;
+  display: block !important;
+}
+#nrc-cta h2 {
+  font-family: 'Bebas Neue', Impact, sans-serif !important;
+  font-size: clamp(2rem, 5vw, 3.2rem) !important;
+  letter-spacing: 0.03em !important;
+  line-height: 1 !important;
+  margin-bottom: 0.75rem !important;
+  color: white !important;
+  border: none !important;
+  padding: 0 !important;
+}
+#nrc-cta h2 span { color: #c0392b !important; }
+#nrc-cta p {
+  font-family: 'IBM Plex Mono', monospace !important;
+  font-size: 10px !important;
+  color: #888 !important;
+  letter-spacing: 0.06em !important;
+  margin-bottom: 1.5rem !important;
+  line-height: 1.8 !important;
+}
+.nrc-cta-links {
+  display: flex !important;
+  gap: 10px !important;
+  justify-content: center !important;
+  flex-wrap: wrap !important;
+}
+.nrc-btn {
+  font-family: 'IBM Plex Mono', monospace !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.1em !important;
+  text-transform: uppercase !important;
+  text-decoration: none !important;
+  padding: 10px 22px !important;
+  border: 1.5px solid !important;
+  display: inline-block !important;
+  cursor: pointer !important;
+}
+.nrc-btn-red { background: #c0392b !important; border-color: #c0392b !important; color: white !important; }
+.nrc-btn-ghost { background: transparent !important; border-color: #444 !important; color: #ccc !important; }
+
+/* ── FOOTER ── */
+#nrc-foot {
+  background: #0d0d0d !important;
+  padding: 1.25rem 2rem !important;
+  text-align: center !important;
+  display: block !important;
+}
+#nrc-foot p {
+  font-family: 'IBM Plex Mono', monospace !important;
+  font-size: 9px !important;
+  color: #444 !important;
+  letter-spacing: 0.05em !important;
+  line-height: 1.9 !important;
+  margin: 0 !important;
+}
+#nrc-foot a { color: #555 !important; text-decoration: none !important; }
+#nrc-foot a:hover { color: #c0392b !important; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 580px) {
+  #nrc-hero-inner { flex-direction: column !important; padding: 2rem 1.25rem !important; }
+  #nrc-main { padding: 2rem 1rem !important; }
+  .nrc-law-badge { min-width: 50px !important; font-size: 8px !important; }
+  #nrc-cta { padding: 2rem 1.25rem !important; }
+  #nrc-hero-foot { padding: 0.75rem 1rem !important; }
+}
+</style>
+
+<div id="nrc-page">
+
+  <!-- HERO -->
+  <div id="nrc-hero">
+    <div id="nrc-hero-accent"></div>
+    <div id="nrc-hero-inner">
+      <div id="nrc-hero-text">
+        <span id="nrc-kicker">Rights of Man &bull; Common Law &bull; All US States</span>
+        <h1>No Consent<br><span class="red">to Record.</span></h1>
+        <span id="nrc-hero-sub">
+          Natural Law &bull; Restatement (2nd) Torts &bull; BIPA &bull; GDPR Art. 7<br>
+          offertocontractrefused.wordpress.com &bull; ruserious.wtf
+        </span>
+      </div>
+      <div id="nrc-qr-block">
+        <div id="nrc-qr-frame">
+          <!-- REPLACE src WITH YOUR QR IMAGE URL FROM WORDPRESS MEDIA LIBRARY -->
+          <img src="YOUR-QR-IMAGE-URL-HERE" alt="Legal notice QR code — scan to read full notice" width="170" height="170">
+        </div>
+        <span id="nrc-qr-caption">Scan — full legal notice<br>embedded in QR data</span>
+      </div>
+    </div>
+    <div id="nrc-hero-foot">
+      <a class="dom-primary" href="https://ruserious.wtf">RUSERIOUS.WTF</a>
+      <a class="dom-secondary" href="https://offertocontractrefused.wordpress.com">offertocontractrefused.wordpress.com</a>
+    </div>
+  </div>
+
+  <!-- NAV -->
+  <nav id="nrc-nav">
+    <a href="#nrc-s1">Notice</a>
+    <a href="#nrc-s2">Common Law</a>
+    <a href="#nrc-s3">Federal</a>
+    <a href="#nrc-s4">By State</a>
+    <a href="#nrc-s5">Consequences</a>
+    <a href="#nrc-s6">Premises</a>
+    <a href="#nrc-s7">Acknowledgment</a>
+  </nav>
+
+  <!-- MAIN -->
+  <div id="nrc-main">
+
+    <!-- S1 NOTICE -->
+    <div class="nrc-sec" id="nrc-s1">
+      <span class="nrc-sec-label">Section 1</span>
+      <div class="nrc-sec-title">Formal Notice</div>
+      <div class="nrc-notice">
+        <div class="nrc-notice-inner">
+          By the <strong>inherent and unalienable rights of man</strong> — including the natural right to bodily autonomy, personal sovereignty, and freedom from unconsented surveillance — and under common law as recognized in all 50 states (<em>Restatement (Second) of Torts §§ 652B–652E</em>): <strong>I do not consent to being recorded, filmed, photographed, observed, or having my biometric data — including facial geometry, voiceprint, or gait — collected, stored, transmitted, or processed in any form.</strong> This notice is served under natural law, common law, and applicable statutory authority. Proceeding past this notice constitutes willful, knowing violation of the fundamental rights asserted herein.
+        </div>
+      </div>
+      <div class="nrc-tagline">
+        "My face is not your data.<br>
+        My voice is not your dataset.<br>
+        My gait is not your training model."
+      </div>
+    </div>
+
+    <!-- S2 COMMON LAW -->
+    <div class="nrc-sec" id="nrc-s2">
+      <span class="nrc-sec-label">Section 2</span>
+      <div class="nrc-sec-title">Common Law Foundation — All 50 States</div>
+      <p style="font-family:'IBM Plex Mono',monospace !important;font-size:10px !important;color:#666 !important;margin-bottom:1.25rem !important;line-height:1.8 !important;display:block !important;">These rights arise from judge-made common law adopted universally across all US jurisdictions. They do not depend on any single state legislature. No internet connection required to assert them. No lawyer required to invoke them.</p>
+      <div class="nrc-law-grid">
+        <div class="nrc-law-row">
+          <div class="nrc-law-badge">Natural<br>Law</div>
+          <div class="nrc-law-body"><p><strong>Inherent Rights of Man</strong> — Bodily autonomy and freedom from unconsented surveillance are pre-political, fundamental rights recognized under natural law and the founding documents of the United States.</p></div>
+        </div>
+        <div class="nrc-law-row">
+          <div class="nrc-law-badge">§ 652B</div>
+          <div class="nrc-law-body"><p><strong>Intrusion Upon Seclusion</strong> — Intentional intrusion into a private matter that a reasonable person would find highly offensive. Smart glasses recording without notice meets this threshold.</p><cite>Restatement (Second) of Torts § 652B — adopted in all US jurisdictions</cite></div>
+        </div>
+        <div class="nrc-law-row">
+          <div class="nrc-law-badge">§ 652C</div>
+          <div class="nrc-law-body"><p><strong>Appropriation of Likeness</strong> — Use of another's name, image, or biometric identity without written consent. Facial geometry captured by AI glasses is likeness data.</p><cite>Restatement (Second) of Torts § 652C</cite></div>
+        </div>
+        <div class="nrc-law-row">
+          <div class="nrc-law-badge">§ 652D</div>
+          <div class="nrc-law-body"><p><strong>Public Disclosure of Private Facts</strong> — Sharing private information a reasonable person would object to having shared or retained.</p><cite>Restatement (Second) of Torts § 652D</cite></div>
+        </div>
+        <div class="nrc-law-row">
+          <div class="nrc-law-badge">§ 652E</div>
+          <div class="nrc-law-body"><p><strong>False Light</strong> — Placing another in a false light through disclosure or misuse of recorded information.</p><cite>Restatement (Second) of Torts § 652E</cite></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- S3 FEDERAL -->
+    <div class="nrc-sec" id="nrc-s3">
+      <span class="nrc-sec-label">Section 3</span>
+      <div class="nrc-sec-title">Federal Authority</div>
+      <div class="nrc-law-grid">
+        <div class="nrc-law-row">
+          <div class="nrc-law-badge">4th<br>Amdt</div>
+          <div class="nrc-law-body"><p><strong>Reasonable Expectation of Privacy</strong> — The Fourth Amendment protects individuals from unreasonable surveillance. Katz v. United States established that what a person seeks to preserve as private may be constitutionally protected.</p><cite>US Constitution, Amendment IV; Katz v. United States, 389 U.S. 347 (1967)</cite></div>
+        </div>
+        <div class="nrc-law-row">
+          <div class="nrc-law-badge">FTC<br>§ 5</div>
+          <div class="nrc-law-body"><p><strong>Unfair or Deceptive Data Practices</strong> — Covert biometric collection without notice or consent constitutes an unfair trade practice subject to FTC enforcement action.</p><cite>Federal Trade Commission Act Section 5</cite></div>
+        </div>
+        <div class="nrc-law-row">
+          <div class="nrc-law-badge">GDPR<br>Art. 7</div>
+          <div class="nrc-law-body"><p><strong>EU Consent Requirement</strong> — If the operator is EU-based or data routes through EU infrastructure, consent must be freely given, specific, informed, and unambiguous. Silence does not constitute consent.</p><cite>General Data Protection Regulation, Article 7</cite></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- S4 STATES -->
+    <div class="nrc-sec" id="nrc-s4">
+      <span class="nrc-sec-label">Section 4</span>
+      <div class="nrc-sec-title">State-Specific Authority</div>
+      <div class="nrc-tabs">
+        <div class="nrc-tab on"  onclick="nrcTab('ga',this)">Georgia</div>
+        <div class="nrc-tab" onclick="nrcTab('il',this)">Illinois</div>
+        <div class="nrc-tab" onclick="nrcTab('ca',this)">California</div>
+        <div class="nrc-tab" onclick="nrcTab('tx',this)">Texas</div>
+        <div class="nrc-tab" onclick="nrcTab('wa',this)">Washington</div>
+        <div class="nrc-tab" onclick="nrcTab('ny',this)">New York</div>
+        <div class="nrc-tab" onclick="nrcTab('fl',this)">Florida</div>
+        <div class="nrc-tab" onclick="nrcTab('or',this)">Oregon</div>
+      </div>
+
+      <div class="nrc-panel on" id="np-ga">
+        <h4>Georgia — O.C.G.A. § 16-11-62</h4>
+        <div class="nrc-statute"><span class="ref">O.C.G.A. § 16-11-62 — Unlawful Surveillance</span><p>Unlawful to use any device to observe, photograph, videotape, record, or transmit the image of another without consent where a reasonable expectation of privacy exists. Criminal + civil exposure.</p></div>
+        <div class="nrc-statute"><span class="ref">O.C.G.A. § 16-11-60 et seq. — Georgia Electronic Surveillance Act</span><p>Covert recording of private conversations without consent is prohibited. Misdemeanor on first offense; felony exposure if recording with intent to distribute.</p></div>
+        <div class="nrc-statute"><span class="ref">O.C.G.A. § 51-1-6 — Civil Remedy</span><p>Statutory violations give rise to civil tort claims including actual damages, punitive damages, and attorney's fees.</p></div>
+      </div>
+
+      <div class="nrc-panel" id="np-il">
+        <h4>Illinois — BIPA 740 ILCS 14 (Strongest in the Nation)</h4>
+        <div class="nrc-statute"><span class="ref">740 ILCS 14/15(b) — Collection Requirements</span><p>No entity may collect a biometric identifier — including facial geometry captured by smart glasses — without first: (1) informing the subject in writing; (2) stating the specific purpose; (3) receiving a written release. Verbal notice alone is insufficient.</p></div>
+        <div class="nrc-statute"><span class="ref">740 ILCS 14/20 — Private Right of Action (No Harm Required)</span><p>Any aggrieved person may sue in state court and recover statutory damages without proving actual harm. Confirmed in Rosenbach v. Six Flags (2019). Facebook settled for $650M. Google settled for $100M.</p></div>
+        <table class="nrc-dtable">
+          <tr><td>Negligent violation</td><td>$1,000 per incident</td></tr>
+          <tr><td>Intentional / reckless violation</td><td>$5,000 per incident</td></tr>
+          <tr><td>Attorney's fees &amp; costs</td><td>Recoverable</td></tr>
+          <tr><td>Class action</td><td>Available</td></tr>
+        </table>
+      </div>
+
+      <div class="nrc-panel" id="np-ca">
+        <h4>California — Civ. Code § 1708.8 &amp; CPRA</h4>
+        <div class="nrc-statute"><span class="ref">Cal. Civ. Code § 1708.8 — Constructive Invasion of Privacy</span><p>Capturing video or audio of a person in a private setting through a device — even from a lawful location — without consent. Civil damages up to $5,000 per violation.</p></div>
+        <div class="nrc-statute"><span class="ref">Cal. Civ. Code §§ 1798.100–1798.199 (CPRA)</span><p>Biometric data requires explicit opt-in consent. Right to know, delete, and opt out. Violations: $100–$750 per consumer per incident or actual damages, whichever is greater.</p></div>
+        <div class="nrc-statute"><span class="ref">Cal. Penal Code § 632 — All-Party Consent</span><p>California requires consent of all parties for recording confidential communications. Criminal offense without consent.</p></div>
+      </div>
+
+      <div class="nrc-panel" id="np-tx">
+        <h4>Texas — CUBI Act &amp; Penal Code § 16.02</h4>
+        <div class="nrc-statute"><span class="ref">Tex. Bus. &amp; Com. Code § 503.001 — CUBI Act</span><p>No person may capture a biometric identifier — including face geometry — for commercial purposes without first informing the person and obtaining consent.</p></div>
+        <div class="nrc-statute"><span class="ref">Penalties</span><p>AG civil action up to $25,000 per knowing violation. AG has actively pursued CUBI enforcement against Google and Meta.</p></div>
+        <div class="nrc-statute"><span class="ref">Tex. Penal Code § 16.02 — Unlawful Interception</span><p>Intentional interception of oral or electronic communications without consent is a third-degree felony.</p></div>
+      </div>
+
+      <div class="nrc-panel" id="np-wa">
+        <h4>Washington — My Health MY Data Act (2023)</h4>
+        <div class="nrc-statute"><span class="ref">RCW 70.372 — My Health MY Data Act</span><p>One of the broadest biometric privacy laws in the US. Requires affirmative authorization before collecting, sharing, or selling consumer health data including biometric data. Private right of action available.</p></div>
+        <div class="nrc-statute"><span class="ref">RCW 9.73.030 — All-Party Consent</span><p>All-party consent required for recording private conversations. Gross misdemeanor — up to 1 year imprisonment.</p></div>
+      </div>
+
+      <div class="nrc-panel" id="np-ny">
+        <h4>New York — Civil Rights §§ 50–51 &amp; NYC Biometric Privacy</h4>
+        <div class="nrc-statute"><span class="ref">N.Y. Civil Rights Law §§ 50–51</span><p>No entity may use the name, portrait, picture, or voice of any living person without prior written consent. Actual damages, punitive damages, and attorney's fees available.</p></div>
+        <div class="nrc-statute"><span class="ref">NYC Admin. Code § 22-1201</span><p>Commercial establishments in NYC must post conspicuous notice before collecting biometric data. $500/day per location + $500 per person whose data was collected without notice.</p></div>
+        <div class="nrc-statute"><span class="ref">N.Y. Penal Law § 250.45 — Unlawful Surveillance</span><p>Recording a person without consent in a private setting is a Class E felony. Distribution elevates to Class D felony.</p></div>
+      </div>
+
+      <div class="nrc-panel" id="np-fl">
+        <h4>Florida — All-Party Consent &amp; Video Voyeurism</h4>
+        <div class="nrc-statute"><span class="ref">Fla. Stat. § 934.03 — Security of Communications Act</span><p>Florida is an all-party consent state. Intentional interception without consent of all parties is a felony of the third degree — up to 5 years imprisonment.</p></div>
+        <div class="nrc-statute"><span class="ref">Fla. Stat. § 810.145 — Video Voyeurism</span><p>Recording a person without consent in a location where there is a reasonable expectation of privacy is a felony. Escalates to second-degree felony for repeat offenders.</p></div>
+      </div>
+
+      <div class="nrc-panel" id="np-or">
+        <h4>Oregon — All-Party Consent &amp; Consumer Privacy Act (2024)</h4>
+        <div class="nrc-statute"><span class="ref">ORS § 165.540 — All-Party Consent</span><p>No person may obtain any part of a conversation without consent of all participants. Class A misdemeanor — up to 1 year and $6,250 fine.</p></div>
+        <div class="nrc-statute"><span class="ref">ORS § 659A.800 — Oregon Consumer Privacy Act</span><p>Rights to access, deletion, and opt-out of processing of personal data including biometric data. AG enforcement up to $25,000 per violation.</p></div>
+      </div>
+    </div>
+
+    <!-- S5 CONSEQUENCES -->
+    <div class="nrc-sec" id="nrc-s5">
+      <span class="nrc-sec-label">Section 5</span>
+      <div class="nrc-sec-title">Consequences of Violation</div>
+      <ul class="nrc-cons">
+        <li>Civil tort — intrusion upon seclusion (Restatement § 652B) — actual + punitive damages</li>
+        <li>Appropriation of likeness — unauthorized use of image or biometric identity</li>
+        <li>Statutory biometric damages $1,000–$5,000 per incident (IL, TX, WA, NY)</li>
+        <li>Class action exposure — BIPA class actions have settled in the hundreds of millions</li>
+        <li>FTC enforcement referral for systematic or commercial collection without consent</li>
+        <li>Criminal charges — up to felony exposure in FL, NY, WA for covert recording</li>
+        <li>GDPR regulatory action if operator is EU-based or data routes through EU infrastructure</li>
+        <li>Attorney's fees recoverable in most biometric and privacy tort actions</li>
+      </ul>
+    </div>
+
+    <!-- S6 PREMISES -->
+    <div class="nrc-sec" id="nrc-s6">
+      <span class="nrc-sec-label">Section 6</span>
+      <div class="nrc-sec-title">Commercial &amp; Premises Notice</div>
+      <div class="nrc-notice" style="margin-bottom:1.25rem !important;">
+        <div class="nrc-notice-inner"><strong>Notice to all persons entering these premises:</strong> This premises does not consent to the operation of smart glasses, wearable cameras, body-worn recording devices, or any audio/visual capture technology by visitors, contractors, delivery personnel, or any other person. <strong>By entering, you acknowledge this notice.</strong> Persons operating recording devices after receiving this notice accept full legal liability for all resulting claims, including criminal referral.</div>
+      </div>
+      <div class="nrc-use"><div class="nrc-use-icon">LEGAL</div><p><strong>Law offices &amp; attorney-client spaces</strong> — Privileged communications require strict confidentiality. Covert recording may constitute obstruction or contempt. Posted notice strengthens privilege claims.</p></div>
+      <div class="nrc-use"><div class="nrc-use-icon">MEDICAL</div><p><strong>Medical &amp; therapy offices</strong> — HIPAA-covered entities have heightened obligations. Patient information captured by wearable cameras triggers breach notification under 45 CFR §§ 160, 164.</p></div>
+      <div class="nrc-use"><div class="nrc-use-icon">BUSINESS</div><p><strong>Businesses with trade secrets</strong> — Smart glasses worn by competitors or employees can constitute economic espionage. Posted notice strengthens a misappropriation of trade secrets claim.</p></div>
+      <div class="nrc-use"><div class="nrc-use-icon">HOME</div><p><strong>Private residences</strong> — The highest reasonable expectation of privacy exists in the home. Any recording without consent is actionable under common law and most state statutes.</p></div>
+      <div class="nrc-use"><div class="nrc-use-icon">GROUP</div><p><strong>Support groups &amp; confidential meetings</strong> — Participants have explicit and implied expectations of privacy. Recording violates the foundational agreement of attendance and may constitute criminal wiretapping.</p></div>
+    </div>
+
+    <!-- S7 ACK -->
+    <div class="nrc-sec" id="nrc-s7">
+      <span class="nrc-sec-label">Section 7</span>
+      <div class="nrc-sec-title">Formal Acknowledgment</div>
+      <div class="nrc-ack">
+        ACKNOWLEDGMENT: Any person who proceeds to record, film, photograph, or collect biometric data of this individual after viewing this notice — whether via smart glasses, wearable camera, handheld device, drone, or any other means — does so with full knowledge of this objection and accepts sole legal liability for all consequences arising therefrom, including but not limited to civil tort claims, statutory biometric damages, criminal referral, FTC enforcement action, and class action exposure. Ignorance of this notice is not a defense once it has been presented, displayed, scanned, or transmitted. Proceeding constitutes an offer to contract at the rate of $5,000 per incident, accepted upon the act of recording.
+      </div>
+    </div>
+
+  </div><!-- /nrc-main -->
+
+  <!-- CTA -->
+  <div id="nrc-cta">
+    <h2>R U <span>Serious</span>?</h2>
+    <p>Print the card. Wear your rights. Post the sign.<br>
+    The QR code above encodes this entire notice — no internet, no excuses.</p>
+    <div class="nrc-cta-links">
+      <a class="nrc-btn nrc-btn-red" href="https://ruserious.wtf">RUSERIOUS.WTF</a>
+      <a class="nrc-btn nrc-btn-ghost" href="https://offertocontractrefused.wordpress.com">offertocontractrefused.wordpress.com</a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div id="nrc-foot">
+    <p>
+      This notice asserts legal rights under natural law, common law, and applicable statute.<br>
+      It does not constitute legal advice. Consult a licensed attorney for jurisdiction-specific counsel.<br>
+      Restatement (2nd) Torts §§ 652A–652E &bull; FTC Act § 5 &bull; GDPR Art. 7 &bull; Katz v. United States, 389 U.S. 347 (1967)<br>
+      <a href="https://ruserious.wtf">ruserious.wtf</a> &bull; <a href="https://offertocontractrefused.wordpress.com">offertocontractrefused.wordpress.com</a>
+    </p>
+  </div>
+
+</div><!-- /nrc-page -->
+
+<script>
+function nrcTab(code, el) {
+  document.querySelectorAll('.nrc-panel').forEach(function(p){ p.classList.remove('on'); });
+  document.querySelectorAll('.nrc-tab').forEach(function(t){ t.classList.remove('on'); });
+  document.getElementById('np-' + code).classList.add('on');
+  el.classList.add('on');
+}
+</script>
