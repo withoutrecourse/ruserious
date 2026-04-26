@@ -1,51 +1,98 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
 <style>
-  #nrc-banner {
-  background: #111111 !important;
-  width: 100% !important;
-  display: block !important;
-  padding: 0 !important;
-  border-bottom: 1px solid #2a2a2a !important;
-}
-#nrc-banner-inner {
-  max-width: 1100px !important;
-  margin: 0 auto !important;
-  padding: 2.5rem 2.5rem !important;
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: center !important;
-  justify-content: center !important;
-  gap: 1rem !important;
-  text-align: center !important;
-  width: 100% !important;
-}
-#nrc-banner-q {
-  font-family: 'Bebas Neue', Impact, sans-serif !important;
-  font-size: clamp(2.5rem, 6vw, 4rem) !important;
-  color: #d0d0d0 !important;
-  letter-spacing: 0.08em !important;
-  line-height: 1 !important;
-  text-align: center !important;
-  display: block !important;
-  width: 100% !important;
-}
-#nrc-banner-text {
-  font-family: 'IBM Plex Mono', monospace !important;
-  font-size: clamp(12px, 1.5vw, 15px) !important;
-  color: #888 !important;
-  letter-spacing: 0.05em !important;
-  line-height: 1.8 !important;
-  text-align: center !important;
-  max-width: 680px !important;
-  display: block !important;
-  margin: 0 auto !important;
-}
- @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,400;0,600;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,400;0,600;1,400&display=swap');
 
-/* Force reset — beats WordPress theme */
+/* Force reset */
 #nrc-page, #nrc-page * { box-sizing: border-box !important; margin: 0 !important; padding: 0 !important; }
 #nrc-page a, #nrc-page a:visited { text-decoration: none !important; }
 #nrc-page ul { list-style: none !important; }
+
+/* ── BANNER — sits OUTSIDE #nrc-page and #nrc-hero ── */
+#nrc-banner {
+  background: #111111;
+  width: 100%;
+  display: block;
+  padding: 0;
+  border-bottom: 1px solid #2a2a2a;
+  text-align: center;
+}
+#nrc-banner-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  text-align: center;
+  width: 100%;
+}
+#nrc-banner-q {
+  font-family: 'Bebas Neue', Impact, sans-serif;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  color: #d0d0d0;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  text-align: center;
+  display: block;
+  width: 100%;
+}
+#nrc-banner-text {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: clamp(12px, 1.5vw, 15px);
+  color: #888;
+  letter-spacing: 0.05em;
+  line-height: 1.8;
+  text-align: center;
+  max-width: 680px;
+  display: block;
+  margin: 0 auto;
+}
+
+/* ── SHOP BAR ── */
+#nrc-shop-bar {
+  background: #1a1a1a;
+  width: 100%;
+  display: block;
+  border-bottom: 1px solid #c0392b;
+  border-top: 1px solid #2a2a2a;
+}
+#nrc-shop-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.25rem 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  text-align: center;
+}
+#nrc-shop-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  color: #888;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  display: block;
+}
+#nrc-shop-btn {
+  font-family: 'Bebas Neue', Impact, sans-serif;
+  font-size: 1.4rem;
+  letter-spacing: 0.1em;
+  color: #ffffff;
+  background: #c0392b;
+  padding: 0.6rem 2rem;
+  text-decoration: none;
+  display: inline-block;
+  border: 2px solid #c0392b;
+}
+#nrc-shop-btn:hover {
+  background: transparent;
+  color: #c0392b;
+  border-color: #c0392b;
+}
 
 /* ── ROOT ── */
 #nrc-page {
@@ -118,40 +165,10 @@
   display: block !important;
 }
 
-#nrc-qr-block {
-  flex-shrink: 0 !important;
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: center !important;
-  gap: 10px !important;
-}
-#nrc-qr-frame {
-  background: #f6f5f1 !important;
-  padding: 10px !important;
-  border: 2px solid #444 !important;
-  display: block !important;
-  position: relative !important;
-}
-#nrc-qr-frame img {
-  display: block !important;
-  width: 170px !important;
-  height: 170px !important;
-}
-#nrc-qr-caption {
-  font-family: 'IBM Plex Mono', monospace !important;
-  font-size: 8px !important;
-  color: #777 !important;
-  text-transform: uppercase !important;
-  letter-spacing: 0.1em !important;
-  text-align: center !important;
-  display: block !important;
-  line-height: 1.6 !important;
-}
-
 #nrc-hero-foot {
   border-top: 1px solid #2a2a2a !important;
   padding: 0.9rem 1.5rem !important;
-  max-width: 860px !important;
+  max-width: 1100px !important;
   margin: 0 auto !important;
   display: flex !important;
   justify-content: space-between !important;
@@ -166,12 +183,6 @@
   color: #c0392b !important;
   letter-spacing: 0.08em !important;
   text-transform: uppercase !important;
-}
-#nrc-hero-foot .dom-secondary {
-  font-family: 'IBM Plex Mono', monospace !important;
-  font-size: 10px !important;
-  color: #555 !important;
-  letter-spacing: 0.04em !important;
 }
 
 /* ── NAV ── */
@@ -209,7 +220,6 @@
 
 /* ── SECTION ── */
 .nrc-sec { margin-bottom: 3.5rem !important; display: block !important; }
-
 .nrc-sec-label {
   font-family: 'IBM Plex Mono', monospace !important;
   font-size: 9px !important;
@@ -219,7 +229,6 @@
   margin-bottom: 4px !important;
   display: block !important;
 }
-
 .nrc-sec-title {
   font-family: 'Bebas Neue', Impact, sans-serif !important;
   font-size: clamp(1.7rem, 4vw, 2.5rem) !important;
@@ -282,10 +291,9 @@
 .nrc-law-row {
   display: flex !important;
   gap: 0 !important;
-  border-bottom: 0.5px solid #ddd !important;
+  border-bottom: 0.5px solid #444 !important;
 }
 .nrc-law-row:last-child { border-bottom: none !important; }
-
 .nrc-law-badge {
   font-family: 'IBM Plex Mono', monospace !important;
   font-size: 9px !important;
@@ -304,33 +312,13 @@
   flex-shrink: 0 !important;
   line-height: 1.5 !important;
 }
-
-.nrc-law-body {
-  padding: 0.85rem 1.1rem !important;
-  flex: 1 !important;
-}
-.nrc-law-body p {
-  font-size: 0.87rem !important;
-  line-height: 1.75 !important;
-  color: #e0e0e0 !important;
-  margin: 0 !important;
-}
+.nrc-law-body { padding: 0.85rem 1.1rem !important; flex: 1 !important; }
+.nrc-law-body p { font-size: 1rem !important; line-height: 1.75 !important; color: #e0e0e0 !important; margin: 0 !important; }
 .nrc-law-body strong { color: #ffffff !important; font-weight: 600 !important; }
-.nrc-law-body cite {
-  display: block !important;
-  font-size: 0.74rem !important;
-  color: #aaa !important;
-  font-style: italic !important;
-  margin-top: 3px !important;
-}
+.nrc-law-body cite { display: block !important; font-size: 0.74rem !important; color: #aaa !important; font-style: italic !important; margin-top: 3px !important; }
 
 /* ── STATE TABS ── */
-.nrc-tabs {
-  display: flex !important;
-  gap: 5px !important;
-  flex-wrap: wrap !important;
-  margin-bottom: 1rem !important;
-}
+.nrc-tabs { display: flex !important; gap: 5px !important; flex-wrap: wrap !important; margin-bottom: 1rem !important; }
 .nrc-tab {
   font-family: 'IBM Plex Mono', monospace !important;
   font-size: 10px !important;
@@ -347,10 +335,8 @@
 }
 .nrc-tab:hover { border-color: #c0392b !important; color: #c0392b !important; }
 .nrc-tab.on { background: #181818 !important; color: white !important; border-color: #181818 !important; }
-
 .nrc-panel { display: none !important; }
 .nrc-panel.on { display: block !important; }
-
 .nrc-panel h4 {
   font-family: 'IBM Plex Mono', monospace !important;
   font-size: 10px !important;
@@ -364,6 +350,7 @@
   font-weight: 400 !important;
 }
 
+/* ── STATUTE ── */
 .nrc-statute {
   background: #252525 !important;
   border: 1px solid #444 !important;
@@ -381,217 +368,100 @@
   letter-spacing: 0.03em !important;
   display: block !important;
 }
-.nrc-statute p {
-  font-size: 1rem !important;
-  line-height: 1.75 !important;
-  color: #d0d0d0 !important;
-  margin: 0 !important;
-}
+.nrc-statute p { font-size: 1rem !important; line-height: 1.75 !important; color: #d0d0d0 !important; margin: 0 !important; }
 
-/* BIPA table */
-.nrc-dtable {
-  width: 100% !important;
-  border-collapse: collapse !important;
-  font-size: 0.86rem !important;
-  background: #252525 !important;
-  border: 1px solid #444 !important;
-  margin-top: 0.75rem !important;
-}
-.nrc-dtable td {
-  padding: 8px 12px !important;
-  border-bottom: 0.5px solid #444 !important;
-  color: #e0e0e0 !important;
-}
+/* ── BIPA TABLE ── */
+.nrc-dtable { width: 100% !important; border-collapse: collapse !important; font-size: 0.86rem !important; background: #252525 !important; border: 1px solid #444 !important; margin-top: 0.75rem !important; }
+.nrc-dtable td { padding: 8px 12px !important; border-bottom: 0.5px solid #444 !important; color: #e0e0e0 !important; }
 .nrc-dtable td:first-child { color: #bbb !important; }
-.nrc-dtable td:last-child {
-  font-family: 'IBM Plex Mono', monospace !important;
-  font-weight: 700 !important;
-  color: #c0392b !important;
-  text-align: right !important;
-}
+.nrc-dtable td:last-child { font-family: 'IBM Plex Mono', monospace !important; font-weight: 700 !important; color: #c0392b !important; text-align: right !important; }
 .nrc-dtable tr:last-child td { border-bottom: none !important; }
 
 /* ── CONSEQUENCES ── */
-.nrc-cons {
-  background: #2a1a1a !important;
-  border: 1px solid #5a2a2a !important;
-  padding: 1.4rem !important;
-  display: block !important;
-}
-.nrc-cons li {
-  font-size: 0.9rem !important;
-  padding: 5px 0 5px 1.4rem !important;
-  position: relative !important;
-  line-height: 1.65 !important;
-  border-bottom: 0.5px solid #e85a2a2a !important;
-  display: block !important;
-  list-style: none !important;
-  color: #e8e8e8 !important;
-}
+.nrc-cons { background: #2a1a1a !important; border: 1px solid #5a2a2a !important; padding: 1.4rem !important; display: block !important; }
+.nrc-cons li { font-size: 1rem !important; padding: 5px 0 5px 1.4rem !important; position: relative !important; line-height: 1.65 !important; border-bottom: 0.5px solid #3a2020 !important; display: block !important; list-style: none !important; color: #e8e8e8 !important; }
 .nrc-cons li:last-child { border-bottom: none !important; }
-.nrc-cons li::before {
-  content: '→' !important;
-  position: absolute !important;
-  left: 0 !important;
-  color: #c0392b !important;
-  font-family: 'IBM Plex Mono', monospace !important;
-}
+.nrc-cons li::before { content: '→' !important; position: absolute !important; left: 0 !important; color: #c0392b !important; font-family: 'IBM Plex Mono', monospace !important; }
 
 /* ── USE CASES ── */
-.nrc-use {
-  display: flex !important;
-  gap: 1rem !important;
-  align-items: flex-start !important;
-  background: #252525 !important;
-  border: 1px solid #444 !important;
-  padding: 0.9rem 1.1rem !important;
-  margin-bottom: 0.6rem !important;
-}
-.nrc-use-icon {
-  font-family: 'IBM Plex Mono', monospace !important;
-  font-size: 8px !important;
-  font-weight: 700 !important;
-  letter-spacing: 0.05em !important;
-  background: #181818 !important;
-  color: #eeeeee !important;
-  padding: 3px 6px !important;
-  white-space: nowrap !important;
-  flex-shrink: 0 !important;
-  margin-top: 3px !important;
-  text-transform: uppercase !important;
-  display: block !important;
-}
-.nrc-use p {
-  font-size: 0.86rem !important;
-  line-height: 1.75 !important;
-  color: #e0e0e0 !important;
-  margin: 0 !important;
-}
+.nrc-use { display: flex !important; gap: 1rem !important; align-items: flex-start !important; background: #252525 !important; border: 1px solid #444 !important; padding: 0.9rem 1.1rem !important; margin-bottom: 0.6rem !important; }
+.nrc-use-icon { font-family: 'IBM Plex Mono', monospace !important; font-size: 8px !important; font-weight: 700 !important; letter-spacing: 0.05em !important; background: #181818 !important; color: #eeeeee !important; padding: 3px 6px !important; white-space: nowrap !important; flex-shrink: 0 !important; margin-top: 3px !important; text-transform: uppercase !important; display: block !important; }
+.nrc-use p { font-size: 1rem !important; line-height: 1.75 !important; color: #e0e0e0 !important; margin: 0 !important; }
 .nrc-use p strong { color: #ffffff !important; font-weight: 600 !important; }
 
 /* ── ACK ── */
-.nrc-ack {
-  font-family: 'IBM Plex Mono', monospace !important;
-  font-size: 0.9rem !important;
-  color: #cccccc !important;
-  border-top: 2px solid #c0392b !important;
-  border-bottom: 1px solid #444 !important;
-  padding: 1.2rem 0 !important;
-  margin: 2rem 0 !important;
-  line-height: 1.95 !important;
-  display: block !important;
-}
+.nrc-ack { font-family: 'IBM Plex Mono', monospace !important; font-size: 0.9rem !important; color: #cccccc !important; border-top: 2px solid #c0392b !important; border-bottom: 1px solid #444 !important; padding: 1.2rem 0 !important; margin: 2rem 0 !important; line-height: 1.95 !important; display: block !important; }
 
 /* ── CTA ── */
-#nrc-cta {
-  background: #181818 !important;
-  color: white !important;
-  padding: 2.5rem 2rem !important;
-  text-align: center !important;
-  margin-top: 2rem !important;
-  display: block !important;
-}
-#nrc-cta h2 {
-  font-family: 'Bebas Neue', Impact, sans-serif !important;
-  font-size: clamp(2rem, 5vw, 3.2rem) !important;
-  letter-spacing: 0.03em !important;
-  line-height: 1 !important;
-  margin-bottom: 0.75rem !important;
-  color: white !important;
-  border: none !important;
-  padding: 0 !important;
-}
+#nrc-cta { background: #181818 !important; color: white !important; padding: 2.5rem 2rem !important; text-align: center !important; margin-top: 2rem !important; display: block !important; }
+#nrc-cta h2 { font-family: 'Bebas Neue', Impact, sans-serif !important; font-size: clamp(2rem, 5vw, 3.2rem) !important; letter-spacing: 0.03em !important; line-height: 1 !important; margin-bottom: 0.75rem !important; color: white !important; border: none !important; padding: 0 !important; }
 #nrc-cta h2 span { color: #c0392b !important; }
-#nrc-cta p {
-  font-family: 'IBM Plex Mono', monospace !important;
-  font-size: 10px !important;
-  color: #888 !important;
-  letter-spacing: 0.06em !important;
-  margin-bottom: 1.5rem !important;
-  line-height: 1.8 !important;
-}
-.nrc-cta-links {
-  display: flex !important;
-  gap: 10px !important;
-  justify-content: center !important;
-  flex-wrap: wrap !important;
-}
-.nrc-btn {
-  font-family: 'IBM Plex Mono', monospace !important;
-  font-size: 11px !important;
-  font-weight: 700 !important;
-  letter-spacing: 0.1em !important;
-  text-transform: uppercase !important;
-  text-decoration: none !important;
-  padding: 10px 22px !important;
-  border: 1.5px solid !important;
-  display: inline-block !important;
-  cursor: pointer !important;
-}
+#nrc-cta p { font-family: 'IBM Plex Mono', monospace !important; font-size: 10px !important; color: #888 !important; letter-spacing: 0.06em !important; margin-bottom: 1.5rem !important; line-height: 1.8 !important; }
+.nrc-cta-links { display: flex !important; gap: 10px !important; justify-content: center !important; flex-wrap: wrap !important; }
+.nrc-btn { font-family: 'IBM Plex Mono', monospace !important; font-size: 11px !important; font-weight: 700 !important; letter-spacing: 0.1em !important; text-transform: uppercase !important; text-decoration: none !important; padding: 10px 22px !important; border: 1.5px solid !important; display: inline-block !important; cursor: pointer !important; }
 .nrc-btn-red { background: #c0392b !important; border-color: #c0392b !important; color: white !important; }
 .nrc-btn-ghost { background: transparent !important; border-color: #444 !important; color: #ccc !important; }
 
 /* ── FOOTER ── */
-#nrc-foot {
-  background: #0d0d0d !important;
-  padding: 1.25rem 2rem !important;
-  text-align: center !important;
-  display: block !important;
-}
-#nrc-foot p {
-  font-family: 'IBM Plex Mono', monospace !important;
-  font-size: 9px !important;
-  color: #444 !important;
-  letter-spacing: 0.05em !important;
-  line-height: 1.9 !important;
-  margin: 0 !important;
-}
+#nrc-foot { background: #0d0d0d !important; padding: 1.25rem 2rem !important; text-align: center !important; display: block !important; }
+#nrc-foot p { font-family: 'IBM Plex Mono', monospace !important; font-size: 9px !important; color: #444 !important; letter-spacing: 0.05em !important; line-height: 1.9 !important; margin: 0 !important; }
 #nrc-foot a { color: #555 !important; text-decoration: none !important; }
 #nrc-foot a:hover { color: #c0392b !important; }
 
 /* ── RESPONSIVE ── */
 @media (max-width: 580px) {
+  #nrc-banner-inner { padding: 2rem 1.25rem !important; }
+  #nrc-shop-inner { flex-direction: column !important; gap: 0.75rem !important; padding: 1rem 1.25rem !important; }
+  #nrc-shop-label { font-size: 10px !important; }
+  #nrc-shop-btn { font-size: 1.2rem !important; width: 100% !important; text-align: center !important; }
   #nrc-hero-inner { flex-direction: column !important; padding: 2rem 1.25rem !important; }
   #nrc-main { padding: 2rem 1rem !important; }
   .nrc-law-badge { min-width: 54px !important; font-size: 10px !important; }
   #nrc-cta { padding: 2rem 1.25rem !important; }
   #nrc-hero-foot { padding: 0.75rem 1rem !important; }
-  .nrc-notice-inner { font-size: 1.15rem !important; }
-  .nrc-law-body p { font-size: 1.1rem !important; }
-  .nrc-statute p { font-size: 1.1rem !important; }
-  .nrc-use p { font-size: 1.1rem !important; }
-  .nrc-cons li { font-size: 1.05rem !important; }
+  .nrc-notice-inner { font-size: 1.1rem !important; }
+  .nrc-law-body p { font-size: 1.05rem !important; }
+  .nrc-statute p { font-size: 1.05rem !important; }
+  .nrc-use p { font-size: 1.05rem !important; }
+  .nrc-cons li { font-size: 1rem !important; }
   .nrc-sec-title { font-size: 2.2rem !important; }
   #nrc-hero h1 { font-size: 3.8rem !important; }
   .nrc-tab { font-size: 12px !important; padding: 7px 11px !important; }
-  .nrc-ack { font-size: 0.95rem !important; }
+  .nrc-ack { font-size: 0.9rem !important; }
   #nrc-nav a { font-size: 12px !important; padding: 11px 11px !important; }
   #nrc-kicker { font-size: 11px !important; }
   #nrc-hero-sub { font-size: 12px !important; }
 }
-
 @media (max-width: 380px) {
-  .nrc-notice-inner { font-size: 1.05rem !important; }
+  .nrc-notice-inner { font-size: 1rem !important; }
   #nrc-hero h1 { font-size: 3rem !important; }
-  .nrc-tab { font-size: 12px !important; padding: 7px 10px !important; }
+  .nrc-tab { font-size: 11px !important; padding: 6px 9px !important; }
   .nrc-law-body p { font-size: 1rem !important; }
   .nrc-statute p { font-size: 1rem !important; }
 }
 </style>
+
+<!-- BANNER — outside #nrc-page intentionally -->
+<div id="nrc-banner">
+  <div id="nrc-banner-inner">
+    <span id="nrc-banner-q">R U SERIOUS?</span>
+    <span id="nrc-banner-text">Can you go anywhere anymore without being recorded, scanned, or having your face turned into someone else's data? Body cams. Facial recognition. They're everywhere. Your face is being collected. Your gait is being tracked. Your voice is being processed. Every store. Every street. Every stranger with smart glasses. You have rights. Here they are.</span>
+  </div>
+</div>
+
+<!-- SHOP BAR — outside #nrc-page intentionally -->
+<div id="nrc-shop-bar">
+  <div id="nrc-shop-inner">
+    <span id="nrc-shop-label">Wear Your Rights. Post Your Notice. Mean It.</span>
+    <a id="nrc-shop-btn" href="https://withoutrecourse.printify.me/" target="_blank">→ Shop Now</a>
+  </div>
+</div>
 
 <div id="nrc-page">
 
   <!-- HERO -->
   <div id="nrc-hero">
     <div id="nrc-hero-accent"></div>
-    <div id="nrc-banner">
-  <div id="nrc-banner-inner">
-    <span id="nrc-banner-q">R U SERIOUS?</span>
-    <span id="nrc-banner-text">Can you go anywhere anymore without being recorded, scanned, or having your face turned into someone else's data?  Body cams. Facial recognition. They're everywhere. 
-Your face is being collected. Your gait is being tracked. Your voice is being processed. Every store. Every street. Every stranger with smart glasses. You have rights. Here they are.
-    </span>
-  </div>
-</div>
     <div id="nrc-hero-inner">
       <div id="nrc-hero-text">
         <span id="nrc-kicker">Rights of Man &bull; Common Law &bull; All US States</span>
@@ -601,6 +471,7 @@ Your face is being collected. Your gait is being tracked. Your voice is being pr
           ruserious.wtf
         </span>
       </div>
+    </div>
     <div id="nrc-hero-foot">
       <a class="dom-primary" href="https://ruserious.wtf">RUSERIOUS.WTF</a>
     </div>
@@ -690,7 +561,7 @@ Your face is being collected. Your gait is being tracked. Your voice is being pr
       <span class="nrc-sec-label">Section 4</span>
       <div class="nrc-sec-title">State-Specific Authority</div>
       <div class="nrc-tabs">
-        <div class="nrc-tab on"  onclick="nrcTab('ga',this)">Georgia</div>
+        <div class="nrc-tab on" onclick="nrcTab('ga',this)">Georgia</div>
         <div class="nrc-tab" onclick="nrcTab('il',this)">Illinois</div>
         <div class="nrc-tab" onclick="nrcTab('ca',this)">California</div>
         <div class="nrc-tab" onclick="nrcTab('tx',this)">Texas</div>
@@ -776,7 +647,6 @@ Your face is being collected. Your gait is being tracked. Your voice is being pr
     </div>
 
     <!-- S6 PREMISES -->
-<!-- S6 PREMISES -->
     <div class="nrc-sec" id="nrc-s6">
       <span class="nrc-sec-label">Section 6</span>
       <div class="nrc-sec-title">For Business Owners &amp; Office Managers: Protect Your Facility!</div>
@@ -814,7 +684,8 @@ Your face is being collected. Your gait is being tracked. Your voice is being pr
     <p>Print the card. Wear your rights. Post the sign.<br>
     The QR code above encodes this entire notice — no internet, no excuses.</p>
     <div class="nrc-cta-links">
-      <a class="nrc-btn nrc-btn-red" href="https://ruserious.wtf">RUSERIOUS.WTF</a>
+      <a class="nrc-btn nrc-btn-red" href="https://withoutrecourse.printify.me/" target="_blank">→ Shop Now</a>
+      <a class="nrc-btn nrc-btn-ghost" href="https://ruserious.wtf">RUSERIOUS.WTF</a>
     </div>
   </div>
 
