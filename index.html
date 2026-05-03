@@ -280,6 +280,33 @@
   display: block !important;
 }
 
+/* ── MAGNET BTN ROW ── */
+.nrc-magnet-bar {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  gap: 1rem !important;
+  margin-bottom: 1.5rem !important;
+  flex-wrap: wrap !important;
+}
+.nrc-magnet-btn {
+  font-family: 'Bebas Neue', Impact, sans-serif !important;
+  font-size: 1.1rem !important;
+  letter-spacing: 0.1em !important;
+  color: #ffffff !important;
+  background: #c0392b !important;
+  padding: 0.6rem 1.5rem !important;
+  text-decoration: none !important;
+  display: inline-block !important;
+  border: 2px solid #c0392b !important;
+  white-space: nowrap !important;
+}
+.nrc-magnet-btn:hover {
+  background: transparent !important;
+  color: #c0392b !important;
+  border-color: #c0392b !important;
+}
+
 /* ── LAW GRID ── */
 .nrc-law-grid {
   border: 1px solid #444 !important;
@@ -431,6 +458,8 @@
   #nrc-nav a { font-size: 12px !important; padding: 11px 11px !important; }
   #nrc-kicker { font-size: 11px !important; }
   #nrc-hero-sub { font-size: 12px !important; }
+  .nrc-magnet-bar { justify-content: center !important; }
+  .nrc-magnet-btn { width: 100% !important; text-align: center !important; }
 }
 @media (max-width: 380px) {
   .nrc-notice-inner { font-size: 1rem !important; }
@@ -480,6 +509,7 @@
   <!-- NAV -->
   <nav id="nrc-nav">
     <a href="#nrc-s1">Notice</a>
+    <a href="#nrc-salpr">Vehicle &amp; ALPR</a>
     <a href="#nrc-s2">Common Law</a>
     <a href="#nrc-s3">Federal</a>
     <a href="#nrc-s4">By State</a>
@@ -505,6 +535,73 @@
         My voice is not your dataset.<br>
         My gait is not your training model."
       </div>
+    </div>
+
+    <!-- S1B VEHICLE & ALPR NOTICE -->
+    <div class="nrc-sec" id="nrc-salpr">
+      <span class="nrc-sec-label">Section 1B</span>
+      <div class="nrc-sec-title">Vehicle &amp; ALPR Notice</div>
+
+      <!-- Magnet buttons flanking the notice -->
+      <div class="nrc-magnet-bar">
+        <a class="nrc-magnet-btn" href="https://withoutrecourse.printify.me/product/28219512/privacy-rights-car-magnet-no-consent-to-data-retention-common-law-notice-5x5-qr-code" target="_blank">⬅ Get Your Car Magnet Here</a>
+        <a class="nrc-magnet-btn" href="https://withoutrecourse.printify.me/product/28219512/privacy-rights-car-magnet-no-consent-to-data-retention-common-law-notice-5x5-qr-code" target="_blank">Get Your Car Magnet Here ➡</a>
+      </div>
+
+      <div class="nrc-notice">
+        <div class="nrc-notice-inner">
+          By the <strong>inherent and unalienable rights of man</strong> — including the natural right to freedom of movement and freedom from unconsented mass surveillance — I do not consent to the retention of any image, data, metadata, timestamp, or location record captured from this vehicle by any automated license plate reader, camera network, or surveillance system. Capture may occur. <strong>Retention does not have my consent. Immediate deletion is required upon capture.</strong><br><br>
+          Retention of this vehicle's data beyond the moment of capture constitutes trespass against unalienable rights and acceptance of civil liability. <strong>Each retention event is a separate civil action.</strong>
+        </div>
+      </div>
+
+      <div class="nrc-tagline">
+        "My movement is not your dataset.<br>
+        My route is not your record.<br>
+        My location is not your property."
+      </div>
+
+      <div class="nrc-law-grid" style="margin-top:1.5rem !important;">
+        <div class="nrc-law-row">
+          <div class="nrc-law-badge">4th<br>Amdt</div>
+          <div class="nrc-law-body">
+            <p><strong>Carpenter v. United States (2018)</strong> — Long-term location tracking requires a warrant. ALPR networks functioning as city-wide dragnet surveillance implicate the same constitutional concern. What a person seeks to preserve as private may be constitutionally protected even in public spaces.</p>
+            <cite>US Constitution, Amendment IV &bull; Carpenter v. United States, 585 U.S. 296 (2018) &bull; Katz v. United States, 389 U.S. 347 (1967)</cite>
+          </div>
+        </div>
+        <div class="nrc-law-row">
+          <div class="nrc-law-badge">GA<br>Law</div>
+          <div class="nrc-law-body">
+            <p><strong>O.C.G.A. § 35-1-22</strong> — Georgia law limits ALPR data retention by law enforcement to 30 days for non-hit data. Private operators have no statutory authority to retain beyond capture. Retention beyond this period by any operator is actionable.</p>
+            <cite>O.C.G.A. § 35-1-22 — Georgia ALPR Data Retention Limits</cite>
+          </div>
+        </div>
+        <div class="nrc-law-row">
+          <div class="nrc-law-badge">Common<br>Law</div>
+          <div class="nrc-law-body">
+            <p><strong>Intrusion Upon Seclusion</strong> — Systematic tracking of movement patterns without consent constitutes intentional intrusion into a private matter that a reasonable person would find highly offensive. A 2024 trial court held that a Flock network functioned as a "dragnet over the entire city."</p>
+            <cite>Restatement (Second) of Torts § 652B — adopted in all US jurisdictions</cite>
+          </div>
+        </div>
+        <div class="nrc-law-row">
+          <div class="nrc-law-badge">Notice</div>
+          <div class="nrc-law-body">
+            <p><strong>Constructive &amp; Actual Notice</strong> — This notice is served publicly at RUSERIOUS.WTF and via certified mail to known ALPR operators. Any operator who has received or constructively received this notice and continues to retain vehicle data does so with full knowledge of this objection. Ignorance is not a defense.</p>
+            <cite>Public constructive notice published at RUSERIOUS.WTF &bull; v1.0 2026</cite>
+          </div>
+        </div>
+      </div>
+
+      <div class="nrc-ack" style="margin-top:1.5rem !important;">
+        VEHICLE ACKNOWLEDGMENT: Any operator of automated license plate recognition, camera network, or surveillance system that retains any image, data, metadata, timestamp, or location record captured from any vehicle displaying this notice — after receiving actual or constructive notice at RUSERIOUS.WTF — does so with full knowledge of this objection and accepts sole legal liability for all consequences arising therefrom. Each day of retention is a separate violation. Proceeding constitutes an offer to contract at the rate of $5,000 per incident per day of retention, accepted upon the act of retention.
+      </div>
+
+      <!-- Magnet buttons repeated below -->
+      <div class="nrc-magnet-bar" style="margin-top:1.5rem !important;">
+        <a class="nrc-magnet-btn" href="https://withoutrecourse.printify.me/product/28219512/privacy-rights-car-magnet-no-consent-to-data-retention-common-law-notice-5x5-qr-code" target="_blank">⬅ Get Your Car Magnet Here</a>
+        <a class="nrc-magnet-btn" href="https://withoutrecourse.printify.me/product/28219512/privacy-rights-car-magnet-no-consent-to-data-retention-common-law-notice-5x5-qr-code" target="_blank">Get Your Car Magnet Here ➡</a>
+      </div>
+
     </div>
 
     <!-- S2 COMMON LAW -->
