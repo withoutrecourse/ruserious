@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+<title>Kill Your HOA Legally — RUSERIOUS.WTF</title>
+<meta name="description" content="Your oppressive HOA installed surveillance cameras. Here's the gameplan to dissolve it legally. 12 neighbors. 30 minutes a week.">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+a, a:visited { text-decoration: none; }
+
+body {
+  background: #1e1e1e;
+  color: #e0e0e0;
+  font-family: 'Lora', Georgia, serif;
+  font-size: 18px;
+  line-height: 1.75;
+}
+
+/* ── BANNER ── */
+#hoa-banner {
+  background: #111;
+  border-bottom: 1px solid #2a2a2a;
+  text-align: center;
+}
+#hoa-banner-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+#hoa-banner-eyebrow {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #c0392b;
+}
+#hoa-banner-h {
+  font-family: 'Bebas Neue', Impact, sans-serif;
+  font-size: clamp(2rem, 6vw, 3.8rem);
+  color: #f0f0f0;
+  letter-spacing: 0.04em;
+  line-height: 1.05;
+  text-align: center;
+}
+#hoa-banner-h span { color: #c0392b; }
+#hoa-banner-sub {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: clamp(11px, 1.4vw, 14px);
+  color: #888;
+  letter-spacing: 0.05em;
+  line-height: 1.8;
+  text-align: center;
+  max-width: 700px;
+}
+
+/* ── SHOP BAR ── */
+#hoa-shop-bar {
+  background: #1a1a1a;
+  border-top: 1px solid #2a2a2a;
+  border-bottom: 1px solid #c0392b;
+}
+#hoa-shop-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+#hoa-shop-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  color: #888;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.hoa-shop-btn {
+  font-family: 'Bebas Neue', Impact, sans-serif;
+  font-size: 1.2rem;
+  letter-spacing: 0.1em;
+  color: #fff;
+  background: #c0392b;
+  padding: 0.5rem 1.5rem;
+  border: 2px solid #c0392b;
+  display: inline-block;
+  white-space: nowrap;
+}
+.hoa-shop-btn:hover { background: transparent; color: #c0392b; }
+
+/* ── NAV ── */
+#hoa-nav {
+  background: #111;
+  border-bottom: 1px solid #222;
+  padding: 0 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+#hoa-nav a {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #888;
+  padding: 11px 12px;
+  border-bottom: 2px solid transparent;
+  white-space: nowrap;
+  display: inline-block;
+}
+#hoa-nav a:hover { color: #fff; border-bottom-color: #c0392b; }
+
+/* ── MAIN ── */
+#hoa-main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 3rem 2.5rem;
+}
+
+/* ── SECTIONS ── */
+.hoa-sec { margin-bottom: 3.5rem; }
+.hoa-sec-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #c0392b;
+  margin-bottom: 4px;
+  display: block;
+}
+.hoa-sec-title {
+  font-family: 'Bebas Neue', Impact, sans-serif;
+  font-size: clamp(1.7rem, 4vw, 2.5rem);
+  line-height: 1.05;
+  color: #f0f0f0;
+  letter-spacing: 0.02em;
+  margin-bottom: 1.5rem;
+  border-bottom: 2.5px solid #c0392b;
+  padding-bottom: 0.6rem;
+  display: block;
+}
+
+/* ── NOTICE BOX ── */
+.hoa-notice {
+  background: #2a2a2a;
+  border-left: 6px solid #c0392b;
+  border-top: 1px solid #444;
+  border-right: 1px solid #444;
+  border-bottom: 1px solid #444;
+  padding: 1.8rem;
+  margin-bottom: 1.5rem;
+}
+.hoa-notice p {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 0.98rem;
+  line-height: 1.9;
+  color: #e8e8e8;
+}
+.hoa-notice p strong { color: #fff; text-decoration: underline; text-decoration-color: #c0392b; text-underline-offset: 3px; }
+.hoa-notice p em { color: #aaa; font-style: italic; }
+
+/* ── STEP ROWS ── */
+.hoa-step {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  background: #252525;
+  border: 1px solid #444;
+  padding: 1rem 1.1rem;
+  margin-bottom: 0.6rem;
+}
+.hoa-step-num {
+  font-family: 'Bebas Neue', Impact, sans-serif;
+  font-size: 1.6rem;
+  color: #fff;
+  background: #c0392b;
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  letter-spacing: 0.02em;
+}
+.hoa-step-body { flex: 1; }
+.hoa-step-body p { font-size: 1rem; line-height: 1.75; color: #e0e0e0; }
+.hoa-step-body p strong { color: #fff; }
+.hoa-step-body .hoa-step-title {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #c0392b;
+  margin-bottom: 6px;
+  display: block;
+}
+
+/* ── LAW GRID ── */
+.hoa-law-grid {
+  border: 1px solid #444;
+  background: #2a2a2a;
+}
+.hoa-law-row {
+  display: flex;
+  border-bottom: 0.5px solid #444;
+}
+.hoa-law-row:last-child { border-bottom: none; }
+.hoa-law-badge {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #c0392b;
+  background: #1a1a1a;
+  border-right: 1px solid #444;
+  padding: 1rem 0.6rem;
+  min-width: 66px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-shrink: 0;
+  line-height: 1.5;
+}
+.hoa-law-body { padding: 0.85rem 1.1rem; flex: 1; }
+.hoa-law-body p { font-size: 1rem; line-height: 1.75; color: #e0e0e0; }
+.hoa-law-body strong { color: #fff; font-weight: 600; }
+.hoa-law-body cite { display: block; font-size: 0.74rem; color: #aaa; font-style: italic; margin-top: 3px; }
+
+/* ── COPY BOX ── */
+.hoa-copy-box {
+  background: #1a1a1a;
+  border: 1px solid #444;
+  padding: 1.2rem;
+  margin: 0.75rem 0 1rem;
+}
+.hoa-copy-text {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.8rem;
+  line-height: 1.9;
+  color: #e0e0e0;
+  margin-bottom: 0.75rem;
+}
+.hoa-copy-btn {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 7px 18px;
+  background: #c0392b;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+/* ── CONSEQUENCES ── */
+.hoa-cons {
+  background: #2a1a1a;
+  border: 1px solid #5a2a2a;
+  padding: 1.4rem;
+  list-style: none;
+}
+.hoa-cons li {
+  font-size: 1rem;
+  padding: 5px 0 5px 1.4rem;
+  position: relative;
+  line-height: 1.65;
+  border-bottom: 0.5px solid #3a2020;
+  color: #e8e8e8;
+}
+.hoa-cons li:last-child { border-bottom: none; }
+.hoa-cons li::before { content: '→'; position: absolute; left: 0; color: #c0392b; font-family: 'IBM Plex Mono', monospace; }
+
+/* ── TAGLINE ── */
+.hoa-tagline {
+  font-family: 'Bebas Neue', Impact, sans-serif;
+  font-size: clamp(1.3rem, 3.5vw, 1.9rem);
+  color: #c0392b;
+  letter-spacing: 0.04em;
+  margin: 1.5rem 0;
+  line-height: 1.15;
+}
+
+/* ── PRODUCT CARDS ── */
+.hoa-products {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1.25rem;
+}
+.hoa-product-card {
+  flex: 1;
+  min-width: 240px;
+  background: #252525;
+  border: 1px solid #444;
+  border-top: 3px solid #c0392b;
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.hoa-product-title {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  line-height: 1.5;
+}
+.hoa-product-desc {
+  font-size: 0.88rem;
+  color: #aaa;
+  line-height: 1.65;
+  flex: 1;
+}
+.hoa-product-btn {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #fff;
+  background: #c0392b;
+  padding: 8px 16px;
+  border: 1.5px solid #c0392b;
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+}
+.hoa-product-btn:hover { background: transparent; color: #c0392b; }
+
+/* ── ACK ── */
+.hoa-ack {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.85rem;
+  color: #ccc;
+  border-top: 2px solid #c0392b;
+  border-bottom: 1px solid #444;
+  padding: 1.2rem 0;
+  margin: 2rem 0;
+  line-height: 1.95;
+}
+
+/* ── CTA ── */
+#hoa-cta {
+  background: #181818;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+#hoa-cta h2 {
+  font-family: 'Bebas Neue', Impact, sans-serif;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  letter-spacing: 0.03em;
+  line-height: 1;
+  margin-bottom: 0.75rem;
+  color: #fff;
+}
+#hoa-cta h2 span { color: #c0392b; }
+#hoa-cta p {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  color: #888;
+  letter-spacing: 0.06em;
+  margin-bottom: 1.5rem;
+  line-height: 1.8;
+}
+.hoa-cta-links { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+.hoa-btn {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 10px 22px;
+  border: 1.5px solid;
+  display: inline-block;
+}
+.hoa-btn-red { background: #c0392b; border-color: #c0392b; color: #fff; }
+.hoa-btn-ghost { background: transparent; border-color: #444; color: #ccc; }
+
+/* ── FOOTER ── */
+#hoa-foot {
+  background: #0d0d0d;
+  padding: 1.25rem 2rem;
+  text-align: center;
+}
+#hoa-foot p {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 9px;
+  color: #444;
+  letter-spacing: 0.05em;
+  line-height: 1.9;
+}
+#hoa-foot a { color: #555; }
+#hoa-foot a:hover { color: #c0392b; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 580px) {
+  #hoa-main { padding: 2rem 1rem; }
+  #hoa-banner-inner { padding: 1.5rem 1rem; }
+  #hoa-shop-inner { flex-direction: column; gap: 0.75rem; }
+  .hoa-shop-btn { width: 100%; text-align: center; }
+  .hoa-step { flex-direction: column; }
+  .hoa-law-badge { min-width: 54px; }
+  .hoa-products { flex-direction: column; }
+}
+</style>
+</head>
+<body>
+
+<!-- BANNER -->
+<div id="hoa-banner">
+  <div id="hoa-banner-inner">
+    <span id="hoa-banner-eyebrow">RUSERIOUS.WTF — HOA Surveillance &amp; Your Rights</span>
+    <div id="hoa-banner-h">
+      Your Oppressive HOA<br>
+      Installed <span>Cameras.</span><br>
+      Get 12 Neighbors Together<br>
+      for 30 Minutes a Week.<br>
+      <span>Kill Your HOA — Legally.</span>
+    </div>
+    <span id="hoa-banner-sub">Your HOA board installed surveillance cameras using dues you paid — without a homeowner vote, without legal authority, and without your consent. Here is the gameplan to document it, challenge it, and dissolve the board that did it. No lawyer required to start.</span>
+  </div>
+</div>
+
+<!-- SHOP BAR -->
+<div id="hoa-shop-bar">
+  <div id="hoa-shop-inner">
+    <span id="hoa-shop-label">Post notice at your driveway while you fight back</span>
+    <a class="hoa-shop-btn" href="https://withoutrecourse.printify.me/product/28219899/no-recording-notice-residential-privacy-garden-flag-smart-glasses-and-amp-wearable-camera-notice-catch-them-at-the-driveway-double-sided-1218-and-amp-24532" target="_blank">→ Garden Flag — Catch Them at the Driveway</a>
+    <a class="hoa-shop-btn" href="https://withoutrecourse.printify.me/product/28219826/no-recording-notice-residential-privacy-sign-smart-glasses-and-amp-wearable-camera-notice-legal-authority-810" target="_blank">→ Residential Privacy Sign</a>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav id="hoa-nav">
+  <a href="#hoa-s1">The Problem</a>
+  <a href="#hoa-s2">Legal Grounds</a>
+  <a href="#hoa-s3">The Gameplan</a>
+  <a href="#hoa-s4">Meeting Agenda</a>
+  <a href="#hoa-s5">Board Letter</a>
+  <a href="#hoa-s6">Newspaper Notice</a>
+  <a href="#hoa-s7">File &amp; Win</a>
+  <a href="https://ruserious.wtf">← Main Site</a>
+</nav>
+
+<!-- MAIN -->
+<div id="hoa-main">
+
+  <!-- S1 THE PROBLEM -->
+  <div class="hoa-sec" id="hoa-s1">
+    <span class="hoa-sec-label">Section 1</span>
+    <div class="hoa-sec-title">What Your HOA Board Just Did</div>
+
+    <div class="hoa-notice">
+      <p>Your HOA board installed automated surveillance cameras in your neighborhood — likely using your dues money, likely without a homeowner vote, and almost certainly without explicit authority in your governing documents. They entered into a multi-year contract with a private surveillance company. That company is now capturing, timestamping, and storing the movements of every vehicle in your neighborhood. Every time you leave for work, church, a doctor's appointment, or your kid's school — it is logged.</p>
+    </div>
+
+    <div class="hoa-tagline">
+      "They used your money to build a cage around your neighborhood.<br>
+      Here is how you tear it down."
+    </div>
+
+    <div class="hoa-law-grid" style="margin-top:1.5rem;">
+      <div class="hoa-law-row">
+        <div class="hoa-law-badge">No<br>Warrant</div>
+        <div class="hoa-law-body"><p><strong>Zero oversight.</strong> HOA surveillance cameras operate with no warrant requirement, no judicial review, and no statutory obligation to notify residents. The board signs a contract and the cameras go up. You find out when you drive past one.</p></div>
+      </div>
+      <div class="hoa-law-row">
+        <div class="hoa-law-badge">Your<br>Dues</div>
+        <div class="hoa-law-body"><p><strong>You are paying for it.</strong> Monthly HOA dues fund the camera contract. You are being charged to surveil yourself. That money comes from your pocket and goes to a private surveillance company under a multi-year agreement the board signed on your behalf.</p></div>
+      </div>
+      <div class="hoa-law-row">
+        <div class="hoa-law-badge">No<br>Vote</div>
+        <div class="hoa-law-body"><p><strong>Most governing documents don't authorize it.</strong> HOA CC&Rs written before 2018 rarely include explicit authority to install neighborhood-wide automated surveillance systems. A board that installs cameras without homeowner vote and without explicit CC&R authority may be acting outside its legal power — called <em>ultra vires</em> action.</p></div>
+      </div>
+      <div class="hoa-law-row">
+        <div class="hoa-law-badge">Board<br>Liable</div>
+        <div class="hoa-law-body"><p><strong>Board members are personally liable for ultra vires decisions</strong> in most states. Their D&O insurance has limits. They have day jobs. They are not billion-dollar companies. Sustained legal pressure from a dozen organized neighbors hits very differently than it does against a well-funded corporation.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- S2 LEGAL GROUNDS -->
+  <div class="hoa-sec" id="hoa-s2">
+    <span class="hoa-sec-label">Section 2</span>
+    <div class="hoa-sec-title">Legal Grounds to Challenge &amp; Dissolve</div>
+
+    <div class="hoa-law-grid">
+      <div class="hoa-law-row">
+        <div class="hoa-law-badge">Ultra<br>Vires</div>
+        <div class="hoa-law-body">
+          <p><strong>Board action beyond governing document authority.</strong> If your CC&Rs do not explicitly authorize the installation of automated license plate readers or neighborhood-wide surveillance systems, the board had no power to install them. Ultra vires actions by HOA boards expose individual board members to personal liability — not just the association.</p>
+          <cite>Applicable in all states — check your CC&Rs for surveillance authorization language</cite>
+        </div>
+      </div>
+      <div class="hoa-law-row">
+        <div class="hoa-law-badge">4th<br>Amdt</div>
+        <div class="hoa-law-body">
+          <p><strong>Reasonable expectation of privacy.</strong> The Fourth Amendment protects against unreasonable surveillance. A 2024 trial court held that a citywide ALPR network functioned as a dragnet — equating it to placing GPS trackers on every vehicle. HOA networks covering entire subdivisions raise identical constitutional concerns.</p>
+          <cite>Katz v. United States, 389 U.S. 347 (1967) &bull; Carpenter v. United States, 585 U.S. 296 (2018)</cite>
+        </div>
+      </div>
+      <div class="hoa-law-row">
+        <div class="hoa-law-badge">Common<br>Law</div>
+        <div class="hoa-law-body">
+          <p><strong>Intrusion upon seclusion.</strong> Systematic tracking of residential movement patterns without consent constitutes intentional intrusion into a private matter that a reasonable person would find highly offensive. Applies to all 50 states through common law adoption of the Restatement (Second) of Torts.</p>
+          <cite>Restatement (Second) of Torts § 652B — adopted in all US jurisdictions</cite>
+        </div>
+      </div>
+      <div class="hoa-law-row">
+        <div class="hoa-law-badge">Breach<br>Fiduciary</div>
+        <div class="hoa-law-body">
+          <p><strong>HOA board members owe a fiduciary duty to all homeowners.</strong> Installing surveillance systems that expose homeowners to privacy violations, data breaches, and legal liability — without a vote, without disclosure, and without consent — may constitute breach of fiduciary duty. Homeowners can sue board members individually for breach of this duty.</p>
+          <cite>HOA fiduciary duty recognized in all states with HOA enabling statutes</cite>
+        </div>
+      </div>
+      <div class="hoa-law-row">
+        <div class="hoa-law-badge">Data<br>Breach</div>
+        <div class="hoa-law-body">
+          <p><strong>Private surveillance networks have been hacked.</strong> When a surveillance company's network is breached, your movement data — where you live, when you leave, when you return, where you go — is in the hands of whoever executed the breach. The HOA board that signed that contract accepted liability for that exposure on behalf of every homeowner in the subdivision.</p>
+          <cite>Board liability for data breach exposure — consult state consumer protection statutes</cite>
+        </div>
+      </div>
+      <div class="hoa-law-row">
+        <div class="hoa-law-badge">Dues<br>Misuse</div>
+        <div class="hoa-law-body">
+          <p><strong>Unauthorized expenditure of HOA funds.</strong> If the board signed a surveillance contract without homeowner vote and your governing documents do not authorize it, that expenditure may constitute unauthorized use of association funds. Homeowners can demand repayment and removal of board members responsible.</p>
+          <cite>Varies by state HOA statute — review your state's HOA enabling act</cite>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- S3 THE GAMEPLAN -->
+  <div class="hoa-sec" id="hoa-s3">
+    <span class="hoa-sec-label">Section 3</span>
+    <div class="hoa-sec-title">The Gameplan — 12 Neighbors, 30 Minutes a Week</div>
+
+    <div class="hoa-notice">
+      <p>You do not need a lawyer to start this. You need <strong>12 motivated neighbors and 30 minutes a week.</strong> Divide the work. Rotate tasks. Document everything. The board that installed those cameras is counting on you being too busy, too isolated, and too intimidated to fight back. Twelve organized neighbors with a clear gameplan is all it takes to make their lives very uncomfortable.</p>
+    </div>
+
+    <div style="margin-top:1.5rem;">
+      <div class="hoa-step">
+        <div class="hoa-step-num">1</div>
+        <div class="hoa-step-body">
+          <span class="hoa-step-title">Pair 1 — Document the Cameras</span>
+          <p>Photograph every camera location with GPS coordinates and timestamps. Note the brand, model if visible, direction of coverage, and proximity to private driveways and homes. This becomes your exhibit list. You are documenting the scope of surveillance your board installed without your consent.</p>
+        </div>
+      </div>
+
+      <div class="hoa-step">
+        <div class="hoa-step-num">2</div>
+        <div class="hoa-step-body">
+          <span class="hoa-step-title">Pair 2 — Pull the Governing Documents</span>
+          <p>Get your CC&Rs, bylaws, and any board meeting minutes from the past 3 years. You are looking for two things: (1) any language explicitly authorizing automated surveillance — if it's not there, the board acted without authority; (2) the vote or resolution authorizing the surveillance contract — if there was no homeowner vote, that is your opening.</p>
+        </div>
+      </div>
+
+      <div class="hoa-step">
+        <div class="hoa-step-num">3</div>
+        <div class="hoa-step-body">
+          <span class="hoa-step-title">Pair 3 — Publish Your Newspaper Notice</span>
+          <p>Call your county newspaper's legal notices department. Ask for the per-word rate. Submit the notice text in Section 6 of this page. Request the <strong>affidavit of publication</strong> when it runs. This establishes public constructive notice that you do not consent to data retention — and creates a court-ready sworn document tied to a specific date. Every camera capture after that date is a documented potential violation.</p>
+        </div>
+      </div>
+
+      <div class="hoa-step">
+        <div class="hoa-step-num">4</div>
+        <div class="hoa-step-body">
+          <span class="hoa-step-title">Pair 4 — Send Certified Mail to the Board</span>
+          <p>Send the formal demand letter in Section 5 via certified mail — return receipt requested — to each board member individually at their home address (public record in most states) AND to the HOA's registered agent if it has one. Keep every green card. Photograph the envelopes before mailing. This establishes actual notice to every board member personally.</p>
+        </div>
+      </div>
+
+      <div class="hoa-step">
+        <div class="hoa-step-num">5</div>
+        <div class="hoa-step-body">
+          <span class="hoa-step-title">Pair 5 — File Public Records Requests</span>
+          <p>File a written request to the HOA board demanding: (1) the full surveillance contract including term and cost; (2) all board meeting minutes where surveillance was discussed or approved; (3) the data retention policy for captured footage; (4) proof of homeowner vote authorizing the installation. They are required to provide governing documents to homeowners in most states. Denial or delay is itself actionable.</p>
+        </div>
+      </div>
+
+      <div class="hoa-step">
+        <div class="hoa-step-num">6</div>
+        <div class="hoa-step-body">
+          <span class="hoa-step-title">Pair 6 — File Individual Suits</span>
+          <p>Once your newspaper affidavit is in hand and your certified mail receipts are returned — file individually. Not class action. Individual suits filed simultaneously by multiple neighbors in the same jurisdiction give the board multiple separate legal defense obligations. Each suit requires a response. Each response costs money. Their D&O insurance has a deductible and a limit. They will feel it fast.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="hoa-notice" style="margin-top:1.5rem;">
+      <p><strong>The rotation system:</strong> At each weekly 30-minute meeting, pairs report progress and tasks rotate. No one person carries the whole load. The board is counting on burnout. Rotation prevents it. Document every meeting with a simple date, attendees, and action items list — that record of organized sustained effort is itself evidence of good faith.</p>
+    </div>
+  </div>
+
+  <!-- S4 MEETING AGENDA -->
+  <div class="hoa-sec" id="hoa-s4">
+    <span class="hoa-sec-label">Section 4</span>
+    <div class="hoa-sec-title">Weekly Meeting Agenda Template</div>
+
+    <div class="hoa-notice">
+      <p>Copy this agenda. Use it every week. Keep the meetings to 30 minutes maximum — longer meetings kill momentum. Rotate the chair so no one person becomes the face of the effort.</p>
+    </div>
+
+    <div class="hoa-copy-box" id="agenda-box">
+      <div class="hoa-copy-text">
+NEIGHBORHOOD PRIVACY ACTION GROUP — WEEKLY MEETING
+Date: _____________ Location: _____________ Chair: _____________
+Attendees: _____________________________________________
+
+[5 MIN] STATUS — Each pair gives a one-sentence update on their task
+[5 MIN] DOCUMENTS — What governing documents have been obtained? What is missing?
+[5 MIN] EVIDENCE — New camera locations documented? New captures noted?
+[5 MIN] LEGAL — Newspaper notice status? Certified mail status? FOIA response received?
+[5 MIN] FILINGS — Any suits ready to file? Who is filing this week?
+[5 MIN] NEXT STEPS — Assign tasks for next week. Rotate pairs if needed.
+
+RECORD KEPT BY: _____________ NEXT MEETING: _____________
+      </div>
+      <button class="hoa-copy-btn" onclick="hoaCopy('agenda-box', this)">Copy Agenda</button>
+    </div>
+  </div>
+
+  <!-- S5 BOARD LETTER -->
+  <div class="hoa-sec" id="hoa-s5">
+    <span class="hoa-sec-label">Section 5</span>
+    <div class="hoa-sec-title">Formal Demand Letter to the Board</div>
+
+    <div class="hoa-notice">
+      <p>Send this via certified mail — return receipt requested — to each board member individually AND to the HOA management company. Replace all bracketed fields before sending. Keep a copy for your records. This letter establishes actual notice and begins the paper trail.</p>
+    </div>
+
+    <div class="hoa-copy-box" id="letter-box">
+      <div class="hoa-copy-text">
+[YOUR FULL NAME]
+[YOUR ADDRESS]
+[CITY, STATE ZIP]
+[DATE]
+
+[BOARD MEMBER FULL NAME]
+[BOARD MEMBER HOME ADDRESS]
+[CITY, STATE ZIP]
+
+RE: FORMAL DEMAND — UNAUTHORIZED SURVEILLANCE INSTALLATION —
+    IMMEDIATE REMOVAL AND DOCUMENT PRODUCTION REQUIRED
+
+Dear [BOARD MEMBER NAME],
+
+I am a homeowner in [SUBDIVISION NAME] and a member of the association you serve as [TITLE]. I write to formally demand immediate action regarding the installation of automated surveillance cameras in our neighborhood.
+
+DEMAND 1 — DOCUMENT PRODUCTION
+Within 14 days of receipt of this letter, provide: (a) the complete surveillance contract including vendor name, term, cost, and data retention policy; (b) all board meeting minutes in which surveillance was discussed or approved; (c) proof of homeowner vote authorizing this installation; (d) the specific provision of our CC&Rs authorizing neighborhood-wide automated surveillance.
+
+DEMAND 2 — DATA DELETION
+Immediately instruct the surveillance vendor to delete all captured data associated with vehicles registered to residents of [SUBDIVISION NAME] who have not provided written consent to data collection and retention.
+
+DEMAND 3 — REMOVAL
+If no homeowner vote authorizing this installation can be produced, immediately begin the process of contract termination and camera removal.
+
+NOTICE OF LIABILITY
+I hereby place you on personal notice that installation of automated surveillance systems without explicit CC&R authority and homeowner vote may constitute ultra vires action, breach of fiduciary duty, and unauthorized expenditure of association funds. I do not consent to the retention of any data captured from my vehicle or person by any surveillance system installed by this association. Each day of retention following this notice is a separate civil action.
+
+Full notice published at: RUSERIOUS.WTF
+
+This letter is sent via certified mail. Your receipt constitutes acknowledgment of this notice.
+
+Respectfully,
+[YOUR FULL NAME]
+[YOUR ADDRESS]
+[YOUR PHONE / EMAIL]
+      </div>
+      <button class="hoa-copy-btn" onclick="hoaCopy('letter-box', this)">Copy Letter</button>
+    </div>
+
+    <!-- Products -->
+    <div class="hoa-products">
+      <div class="hoa-product-card">
+        <div class="hoa-product-title">Residential Privacy Garden Flag</div>
+        <div class="hoa-product-desc">Double-sided 12×18" and 24×32" garden flag. Catches them at the driveway. Posts notice before they reach your door. Weatherproof. Legal notice on both sides.</div>
+        <a class="hoa-product-btn" href="https://withoutrecourse.printify.me/product/28219899/no-recording-notice-residential-privacy-garden-flag-smart-glasses-and-amp-wearable-camera-notice-catch-them-at-the-driveway-double-sided-1218-and-amp-24532" target="_blank">→ Get the Garden Flag</a>
+      </div>
+      <div class="hoa-product-card">
+        <div class="hoa-product-title">Residential Privacy Sign</div>
+        <div class="hoa-product-desc">8×10" matte finish sign. Full legal notice, statutory citations, and QR code linking to RUSERIOUS.WTF. Post at every entrance to your property.</div>
+        <a class="hoa-product-btn" href="https://withoutrecourse.printify.me/product/28219826/no-recording-notice-residential-privacy-sign-smart-glasses-and-amp-wearable-camera-notice-legal-authority-810" target="_blank">→ Get the Privacy Sign</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- S6 NEWSPAPER NOTICE -->
+  <div class="hoa-sec" id="hoa-s6">
+    <span class="hoa-sec-label">Section 6</span>
+    <div class="hoa-sec-title">Publish Your Newspaper Notice — The Linchpin</div>
+
+    <div class="hoa-notice">
+      <p>Most people don't know this: <strong>the local newspaper is the official public record.</strong> Courts recognize publication in a newspaper of general circulation as legally sufficient constructive notice — without argument. A Facebook post is corroborating evidence. A newspaper affidavit of publication is a sworn legal document that judges accept without question.<br><br>
+      Call your county newspaper. Ask for the <em>legal notices department</em>. Ask for the per-word rate. Most county papers run $10–$25 for a short notice. Submit the text below. When it runs, <strong>request the affidavit of publication.</strong> That document is the foundation everything else is built on.</p>
+    </div>
+
+    <div class="hoa-copy-box" id="newspaper-box">
+      <div class="hoa-copy-text">
+NOTICE OF PRIVACY ASSERTION — I, [YOUR FULL LEGAL NAME], a man/woman, hereby serve public notice that I do not consent to the retention of any image, data, or metadata captured from my person or vehicle by any automated surveillance or recording system installed or operated by any homeowners association, private surveillance network, or related entity. Retention beyond capture constitutes trespass against my unalienable rights. Each retention event is a separate civil action at $5,000 per incident. Full notice published at RUSERIOUS.WTF. Published for constructive notice purposes.
+      </div>
+      <button class="hoa-copy-btn" onclick="hoaCopy('newspaper-box', this)">Copy Notice Text</button>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#666;margin-left:1rem;">Replace [YOUR FULL LEGAL NAME] with your name before submitting.</span>
+    </div>
+
+    <div class="hoa-notice" style="margin-top:1rem;">
+      <p><strong>After it publishes:</strong> Request the affidavit of publication. Make multiple copies. Give one to each pair in your group. File one in your evidence folder. Every camera capture of your vehicle or person after the publication date is a documented potential violation with a court-ready sworn document establishing prior notice.</p>
+    </div>
+  </div>
+
+  <!-- S7 FILE AND WIN -->
+  <div class="hoa-sec" id="hoa-s7">
+    <span class="hoa-sec-label">Section 7</span>
+    <div class="hoa-sec-title">File &amp; Win — The Evidence Package</div>
+
+    <div class="hoa-notice">
+      <p>Once your newspaper affidavit is in hand and your certified mail receipts are returned, you have a court-ready paper trail. File individually — not as a group, not as class action. Individual suits filed simultaneously by multiple neighbors create multiple separate legal defense obligations for the board. Each suit requires a separate response. Each response costs money from the D&O policy. The deductible alone will get their attention.</p>
+    </div>
+
+    <div style="margin-top:1rem;">
+      <ul class="hoa-cons">
+        <li><strong>Newspaper affidavit of publication</strong> — establishes constructive notice date. The foundation.</li>
+        <li><strong>Certified mail green card receipts</strong> — establishes actual notice to each board member personally.</li>
+        <li><strong>Governing documents</strong> — show the board lacked authority to install surveillance.</li>
+        <li><strong>Board meeting minutes</strong> — show no homeowner vote was taken.</li>
+        <li><strong>Surveillance contract</strong> — shows term, cost, data retention policy, and board signatures.</li>
+        <li><strong>Camera location photographs with GPS and timestamps</strong> — documents scope of surveillance.</li>
+        <li><strong>Data retention evidence</strong> — FOIA response or vendor documentation showing data retained after your notice date.</li>
+        <li><strong>Screenshots of RUSERIOUS.WTF</strong> — shows public constructive notice timestamp.</li>
+      </ul>
+    </div>
+
+    <div class="hoa-ack">
+      THE MATH: A board member facing a $500 small claims filing that requires them to take a day off work, hire a lawyer, respond to discovery, and defend themselves personally — while 11 of their neighbors file identical suits simultaneously — is a board member who is about to call an emergency meeting to discuss contract termination. They are not Flock Safety. They do not have a litigation war chest. They have a day job, a D&O policy with a $10,000 deductible, and a property management company that wants nothing to do with any of this.
+    </div>
+
+    <div class="hoa-notice">
+      <p><strong>The goal is not necessarily to win every case.</strong> The goal is to make the cost of maintaining the surveillance system exceed the cost of terminating it. Twelve organized neighbors filing individually, rotating tasks, sustaining pressure week over week — that is a machine the board cannot outlast.<br><br>
+      Share this page with every neighbor who is tired of being watched in their own neighborhood.<br><br>
+      <strong>RUSERIOUS.WTF</strong></p>
+    </div>
+  </div>
+
+</div><!-- /hoa-main -->
+
+<!-- CTA -->
+<div id="hoa-cta">
+  <h2>R U <span>Serious</span>?</h2>
+  <p>12 neighbors. 30 minutes a week. The gameplan is right here.<br>
+  Share this page with everyone in your subdivision.</p>
+  <div class="hoa-cta-links">
+    <a class="hoa-btn hoa-btn-red" href="https://withoutrecourse.printify.me/" target="_blank">→ Shop Now</a>
+    <a class="hoa-btn hoa-btn-ghost" href="https://ruserious.wtf">← Main Site</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div id="hoa-foot">
+  <p>
+    This page asserts legal rights under natural law, common law, and applicable statute.<br>
+    It does not constitute legal advice. Consult a licensed attorney for jurisdiction-specific counsel.<br>
+    Restatement (2nd) Torts §§ 652A–652E &bull; Katz v. United States, 389 U.S. 347 (1967) &bull; Carpenter v. United States, 585 U.S. 296 (2018)<br>
+    <a href="https://ruserious.wtf">ruserious.wtf</a>
+  </p>
+</div>
+
+<script>
+function hoaCopy(boxId, btn) {
+  var text = document.getElementById(boxId).querySelector('.hoa-copy-text').innerText;
+  navigator.clipboard.writeText(text).then(function() {
+    btn.innerText = 'Copied!';
+    btn.style.background = '#27ae60';
+    setTimeout(function(){ btn.innerText = btn.innerText.includes('Agenda') ? 'Copy Agenda' : btn.innerText.includes('Letter') ? 'Copy Letter' : 'Copy Notice Text'; btn.style.background = '#c0392b'; }, 2500);
+  }).catch(function() {
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+    btn.innerText = 'Copied!';
+    setTimeout(function(){ btn.style.background = '#c0392b'; }, 2500);
+  });
+}
+</script>
+</body>
+</html>
